@@ -1,0 +1,184 @@
+{
+  "menus": [
+    {
+      "slug": "priyas-tiffin",
+      "template": "minimal",
+      "name": "Priya's Tiffin",
+      "logoEmoji": "🥗",
+      "tagline": "Home-cooked meals - Andheri West",
+      "city": "Mumbai",
+      "instagramHandle": "priyas_tiffin",
+      "whatsappNumber": "919876543210",
+      "menuUrl": "menufast.in/priyas-tiffin",
+      "meta": [
+        "Min order Rs.200",
+        "12pm - 3pm",
+        "Open today"
+      ],
+      "categories": [
+        {
+          "id": "tiffin-lunch",
+          "name": "Tiffin (Lunch)",
+          "items": [
+            {
+              "id": "full-tiffin",
+              "name": "Full Tiffin - Veg",
+              "description": "Dal, sabzi, rice, 3 rotis, salad",
+              "price": 120,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": false,
+              "imageEmoji": null
+            },
+            {
+              "id": "half-tiffin",
+              "name": "Half Tiffin",
+              "description": "Dal, sabzi, 2 rotis",
+              "price": 80,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": false,
+              "imageEmoji": null
+            },
+            {
+              "id": "rice-dal",
+              "name": "Rice + Dal",
+              "description": "Plain rice, tadka dal",
+              "price": 60,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": false,
+              "imageEmoji": null
+            },
+            {
+              "id": "paneer-special",
+              "name": "Paneer Special",
+              "description": "Not available today",
+              "price": 150,
+              "isVeg": true,
+              "isAvailable": false,
+              "isPopular": false,
+              "imageEmoji": null
+            }
+          ]
+        },
+        {
+          "id": "extras",
+          "name": "Extras",
+          "items": [
+            {
+              "id": "extra-roti",
+              "name": "Extra Roti",
+              "description": "",
+              "price": 8,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": false,
+              "imageEmoji": null
+            },
+            {
+              "id": "curd-100",
+              "name": "Curd (100g)",
+              "description": "",
+              "price": 15,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": false,
+              "imageEmoji": null
+            },
+            {
+              "id": "papad",
+              "name": "Papad",
+              "description": "",
+              "price": 10,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": true,
+              "imageEmoji": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "zainabs-bakes",
+      "template": "cards",
+      "name": "Zainab's Bakes",
+      "logoEmoji": "🍰",
+      "tagline": "Custom cakes & pastries - Bandra",
+      "city": "Mumbai",
+      "instagramHandle": "zainabsbakes",
+      "whatsappNumber": "919812345678",
+      "menuUrl": "menufast.in/zainabs-bakes",
+      "meta": [
+        "Delivery in 45 mins",
+        "Pre-order available",
+        "Open today"
+      ],
+      "categories": [
+        {
+          "id": "cakes",
+          "name": "Cakes",
+          "items": [
+            {
+              "id": "tres-leches",
+              "name": "Tres Leches (1 kg)",
+              "description": "Light sponge soaked in three milks, whipped cream",
+              "price": 850,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": true,
+              "imageEmoji": "🎂"
+            },
+            {
+              "id": "belgian-mud",
+              "name": "Belgian Chocolate Mud",
+              "description": "Dense, fudgy, ganache-frosted",
+              "price": 950,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": false,
+              "imageEmoji": "🍫"
+            },
+            {
+              "id": "dark-forest",
+              "name": "Dark Forest Cake",
+              "description": "Cherries, cream, dark chocolate layers",
+              "price": 900,
+              "isVeg": true,
+              "isAvailable": false,
+              "isPopular": false,
+              "imageEmoji": "🌲"
+            }
+          ]
+        },
+        {
+          "id": "pastries",
+          "name": "Pastries & Slices",
+          "items": [
+            {
+              "id": "biscoff-cheesecake",
+              "name": "Biscoff Cheesecake",
+              "description": "Slice - Lotus Biscoff base",
+              "price": 180,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": true,
+              "imageEmoji": "🥐"
+            },
+            {
+              "id": "creme-brulee-tart",
+              "name": "Creme Brulee Tart",
+              "description": "Caramelised custard in buttery shell",
+              "price": 160,
+              "isVeg": true,
+              "isAvailable": true,
+              "isPopular": false,
+              "imageEmoji": "🍮"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

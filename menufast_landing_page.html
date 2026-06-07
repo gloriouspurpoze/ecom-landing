@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;--white:#fafaf8;--gray:#6b6b6b;--border:#e5e5e0;
+  --accent:#1a1a1a;--green:#1d9e75;--green-light:#e1f5ee;
+  --font-display:'DM Serif Display',serif;--font-body:'DM Sans',sans-serif;
+}
+body{font-family:var(--font-body);background:var(--white);color:var(--black);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--white);z-index:100}
+.logo{font-family:var(--font-display);font-size:1.25rem;letter-spacing:-0.02em}
+.logo span{color:var(--green)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--gray);font-size:14px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--black)}
+.nav-cta{background:var(--black);color:var(--white)!important;padding:.5rem 1.25rem;border-radius:6px;font-size:13px!important;font-weight:500!important;transition:opacity .2s!important}
+.nav-cta:hover{opacity:.8!important}
+
+.hero{max-width:720px;margin:0 auto;padding:6rem 2.5rem 4rem;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:var(--green-light);color:#0f6e56;font-size:12px;font-weight:500;padding:.35rem .9rem;border-radius:100px;letter-spacing:.04em;margin-bottom:2rem;text-transform:uppercase}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#1d9e75}
+h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.12;letter-spacing:-0.03em;margin-bottom:1.5rem;font-weight:400}
+h1 em{font-style:italic;color:var(--green)}
+.hero-sub{font-size:1.05rem;color:var(--gray);max-width:480px;margin:0 auto 2.5rem;line-height:1.75;font-weight:300}
+.hero-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--black);color:var(--white);padding:.75rem 1.75rem;border-radius:7px;font-size:14px;font-weight:500;text-decoration:none;transition:opacity .2s;letter-spacing:.01em}
+.btn-primary:hover{opacity:.75}
+.btn-secondary{background:transparent;color:var(--black);padding:.75rem 1.75rem;border-radius:7px;font-size:14px;font-weight:400;text-decoration:none;border:1px solid var(--border);transition:border-color .2s}
+.btn-secondary:hover{border-color:#aaa}
+.hero-note{margin-top:1.25rem;font-size:13px;color:#aaa;font-weight:300}
+
+.social-proof{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.sp-item{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:.5rem}
+.sp-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+
+.section{max-width:900px;margin:0 auto;padding:5rem 2.5rem}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:3rem}
+
+.problem{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem}
+.problem-item{background:var(--white);padding:1.75rem;display:flex;gap:1rem;align-items:flex-start}
+.problem-icon{width:32px;height:32px;border-radius:8px;background:#f5f5f0;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.problem-text strong{font-size:14px;font-weight:500;display:block;margin-bottom:.3rem}
+.problem-text p{font-size:13px;color:var(--gray);line-height:1.6}
+
+.how{margin-top:2rem}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:grid;grid-template-columns:48px 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border);align-items:start}
+.step:last-child{border-bottom:none}
+.step-num{font-family:var(--font-display);font-size:1.75rem;color:#ddd;line-height:1;padding-top:.1rem;font-weight:400}
+.step-body strong{font-size:15px;font-weight:500;display:block;margin-bottom:.4rem}
+.step-body p{font-size:14px;color:var(--gray);line-height:1.65;max-width:520px}
+.step-tag{display:inline-block;background:var(--green-light);color:#0f6e56;font-size:11px;padding:.2rem .6rem;border-radius:4px;margin-top:.6rem;font-weight:500}
+
+.pricing-card{border:1px solid var(--border);border-radius:14px;padding:2.5rem;margin-top:2rem;max-width:400px;position:relative}
+.pricing-card.featured{border-color:var(--black);border-width:1.5px}
+.price{font-family:var(--font-display);font-size:3rem;letter-spacing:-0.04em;margin:1rem 0 .25rem;font-weight:400}
+.price sup{font-size:1.25rem;vertical-align:super;font-family:var(--font-body);font-weight:300}
+.price-period{font-size:13px;color:var(--gray);margin-bottom:1.75rem}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.price-features li{font-size:14px;display:flex;align-items:center;gap:.6rem;color:var(--gray)}
+.price-features li::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--green-light);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%231d9e75' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;flex-shrink:0}
+.price-free{display:inline-block;font-size:12px;color:var(--gray);border:1px solid var(--border);padding:.2rem .7rem;border-radius:4px;margin-bottom:1rem}
+
+.faq{margin-top:2rem;display:flex;flex-direction:column}
+.faq-item{padding:1.5rem 0;border-bottom:1px solid var(--border);cursor:pointer}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:500;user-select:none}
+.faq-q span{font-size:20px;color:var(--gray);font-weight:300;transition:transform .3s}
+.faq-a{font-size:14px;color:var(--gray);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-top:.75rem}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+
+footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:var(--font-display);font-size:1rem}
+.footer-logo span{color:var(--green)}
+.footer-note{font-size:12px;color:#bbb}
+
+.demo-box{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem}
+.demo-bar{background:#f5f5f0;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border)}
+.demo-dot{width:10px;height:10px;border-radius:50%}
+.demo-url{font-size:12px;color:var(--gray);margin-left:.5rem;background:var(--white);padding:.2rem .75rem;border-radius:5px;border:1px solid var(--border);flex:1;max-width:280px}
+.demo-inner{padding:1.5rem;background:var(--white)}
+.demo-biz{display:flex;gap:.75rem;align-items:center;margin-bottom:1.25rem}
+.demo-logo-sq{width:40px;height:40px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:18px}
+.demo-biz-name{font-weight:500;font-size:15px}
+.demo-biz-sub{font-size:12px;color:var(--gray)}
+.demo-items{display:flex;flex-direction:column;gap:.6rem}
+.demo-item{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;border:1px solid var(--border);border-radius:8px}
+.demo-item-name{font-size:14px;font-weight:400}
+.demo-item-price{font-size:14px;font-weight:500}
+.demo-item-badge{font-size:11px;background:var(--green-light);color:#0f6e56;padding:.15rem .5rem;border-radius:4px;margin-left:.5rem}
+.demo-wa-btn{width:100%;margin-top:1rem;background:#25D366;color:#fff;border:none;padding:.75rem;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-body)}
+
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem}
+  .hero{padding:4rem 1.25rem 3rem}
+  .section{padding:3.5rem 1.25rem}
+  .problem{grid-template-columns:1fr}
+  footer{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">menu<span>fast</span></div>
+  <div class="nav-links">
+    <a href="#">How it works</a>
+    <a href="#">Pricing</a>
+    <a href="#" class="nav-cta">Start free →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow"><span class="eyebrow-dot"></span>For home kitchens &amp; cloud kitchens</div>
+  <h1>Your menu.<br><em>Your customers.</em><br>Zero commission.</h1>
+  <p class="hero-sub">Stop losing 28% to Swiggy. Get a beautiful digital menu, WhatsApp ordering, and your own customer list — all in one place.</p>
+  <div class="hero-actions">
+    <a href="#" class="btn-primary">Get your menu in 10 minutes</a>
+    <a href="#" class="btn-secondary">See a live example</a>
+  </div>
+  <p class="hero-note">14-day free trial · No credit card · Cancel anytime</p>
+</div>
+
+<div class="social-proof">
+  <span class="sp-item">🍰 Home bakeries</span>
+  <span class="sp-dot"></span>
+  <span class="sp-item">🍱 Tiffin services</span>
+  <span class="sp-dot"></span>
+  <span class="sp-item">☁️ Cloud kitchens</span>
+  <span class="sp-dot"></span>
+  <span class="sp-item">🥗 Health food startups</span>
+</div>
+
+<div class="section">
+  <div class="section-label">The problem</div>
+  <h2 style="font-family:var(--font-display);font-size:1.9rem;letter-spacing:-0.02em;font-weight:400;margin-bottom:.75rem">Running a home kitchen is hard enough. <em>Taking orders shouldn't be.</em></h2>
+  <p style="color:var(--gray);margin-bottom:2rem;font-size:15px;max-width:560px">You're replying to the same Instagram DMs 50 times a day. Your price list is a screenshot. And Swiggy takes a cut of every single order.</p>
+
+  <div class="problem">
+    <div class="problem-item">
+      <div class="problem-icon">💬</div>
+      <div class="problem-text"><strong>DM chaos</strong><p>"What's available?" "Do you deliver to Andheri?" "How much for a box of 12?" — repeated, all day, every day.</p></div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">📋</div>
+      <div class="problem-text"><strong>Screenshot menus</strong><p>A blurry photo of a handwritten price list isn't a menu. Your food deserves better.</p></div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">💸</div>
+      <div class="problem-text"><strong>28% gone to platforms</strong><p>Swiggy and Zomato take ₹280 from every ₹1,000 order. That's rent money.</p></div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">🙈</div>
+      <div class="problem-text"><strong>No customer data</strong><p>You don't know who your regulars are, when they last ordered, or how to reach them again.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="border-top:1px solid var(--border);padding-top:5rem">
+  <div class="section-label">How it works</div>
+  <div class="how">
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <strong>Build your menu in minutes</strong>
+          <p>Add your dishes, upload photos, set prices. Toggle items on/off daily. No tech skills needed — if you can post on Instagram, you can do this.</p>
+          <span class="step-tag">Takes under 10 minutes</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <strong>Drop the link in your Instagram bio</strong>
+          <p>You get a clean menu page at <code style="background:#f5f5f0;padding:.1rem .4rem;border-radius:4px;font-size:13px">menufast.in/yourkitchen</code>. One link. Customers tap, browse, and order.</p>
+          <span class="step-tag">Works on any phone</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <strong>Orders land directly on your WhatsApp</strong>
+          <p>When a customer places an order, you get a clean, structured message on WhatsApp. Name, items, quantity, address. No DM chaos. No manual calculations.</p>
+          <span class="step-tag">Zero commission, ever</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <strong>Build your own customer list</strong>
+          <p>Every order adds the customer to your database automatically. Send reorder reminders. Ask for Google reviews. Own your audience — not the platform's.</p>
+          <span class="step-tag">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="border-top:1px solid var(--border)">
+  <div class="section-label">See it live</div>
+  <p style="color:var(--gray);margin-bottom:1rem;font-size:15px">This is what your customers will see when they open your menu link.</p>
+  <div class="demo-box">
+    <div class="demo-bar">
+      <div class="demo-dot" style="background:#ff5f57"></div>
+      <div class="demo-dot" style="background:#ffbd2e"></div>
+      <div class="demo-dot" style="background:#28ca41"></div>
+      <div class="demo-url">menufast.in/zainabs-bakes</div>
+    </div>
+    <div class="demo-inner">
+      <div class="demo-biz">
+        <div class="demo-logo-sq">🍰</div>
+        <div>
+          <div class="demo-biz-name">Zainab's Bakes</div>
+          <div class="demo-biz-sub">Home bakery · Mumbai · Orders via WhatsApp</div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--gray);margin-bottom:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em">Cakes & Pastries</p>
+      <div class="demo-items">
+        <div class="demo-item">
+          <div><span class="demo-item-name">Tres Leches (1 kg)</span><span class="demo-item-badge">Veg</span></div>
+          <div class="demo-item-price">₹850</div>
+        </div>
+        <div class="demo-item">
+          <div><span class="demo-item-name">Biscoff Cheesecake (slice)</span><span class="demo-item-badge">Veg</span></div>
+          <div class="demo-item-price">₹180</div>
+        </div>
+        <div class="demo-item" style="opacity:.45">
+          <div><span class="demo-item-name" style="text-decoration:line-through">Dark Forest Cake</span></div>
+          <div style="font-size:12px;color:var(--gray)">Sold out today</div>
+        </div>
+      </div>
+      <button class="demo-wa-btn">Order via WhatsApp →</button>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="border-top:1px solid var(--border)">
+  <div class="section-label">Pricing</div>
+  <h2 style="font-family:var(--font-display);font-size:1.9rem;letter-spacing:-0.02em;font-weight:400;margin-bottom:.5rem">One plan. Everything included.</h2>
+  <p style="color:var(--gray);margin-bottom:2rem;font-size:15px">We don't take a cut of your orders. Ever. Flat monthly subscription, cancel anytime.</p>
+  <div class="pricing-card featured">
+    <div class="price-free">Free for 14 days</div>
+    <h3 style="font-size:15px;font-weight:500">Starter</h3>
+    <div class="price"><sup>₹</sup>399</div>
+    <div class="price-period">per month · billed monthly</div>
+    <ul class="price-features">
+      <li>Digital menu with unlimited items</li>
+      <li>WhatsApp ordering (zero commission)</li>
+      <li>QR code for your menu</li>
+      <li>Daily availability toggle</li>
+      <li>Your own menu link (menufast.in/you)</li>
+      <li>2 menu templates to choose from</li>
+      <li>Basic analytics (views, orders)</li>
+    </ul>
+    <a href="#" class="btn-primary" style="display:block;text-align:center">Start free trial →</a>
+  </div>
+  <p style="margin-top:1rem;font-size:13px;color:#bbb">Custom branding, logo upload, and more templates coming in the Pro plan.</p>
+</div>
+
+<div class="section" style="border-top:1px solid var(--border)">
+  <div class="section-label">FAQ</div>
+  <div class="faq">
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Do I need a website or any tech skills? <span>+</span></div>
+      <div class="faq-a">Not at all. If you can fill a Google Form, you can set up your menu. We handle everything — hosting, the link, the QR code. You just add your dishes.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">How does WhatsApp ordering work? <span>+</span></div>
+      <div class="faq-a">When a customer taps "Order via WhatsApp", a pre-filled message is sent to your WhatsApp number with their order details — items, quantities, and their address. No API setup needed on your side.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Can I update my menu daily? <span>+</span></div>
+      <div class="faq-a">Yes! You can toggle any item as "unavailable" or "sold out" in seconds. Perfect for home kitchens where stock changes every day.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">What's the difference from Swiggy/Zomato? <span>+</span></div>
+      <div class="faq-a">Swiggy and Zomato take 25–30% of every order, own your customer data, and control your visibility. With Menufast, you keep 100% of every order, own your customer list, and your menu works on your terms.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Can I cancel anytime? <span>+</span></div>
+      <div class="faq-a">Yes. No lock-in, no cancellation fee. If you cancel, your menu stays active until the end of the billing period.</div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:4rem 2.5rem 5rem;border-top:1px solid var(--border)">
+  <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:-0.02em;font-weight:400;margin-bottom:.75rem">Ready to own your orders?</h2>
+  <p style="color:var(--gray);margin-bottom:2rem;font-size:15px">Set up your menu in 10 minutes. Share the link. Start receiving orders.</p>
+  <a href="#" class="btn-primary" style="font-size:15px;padding:.85rem 2rem">Start your free trial →</a>
+  <p style="margin-top:1rem;font-size:13px;color:#bbb">₹399/month after 14 days. No card needed to start.</p>
+</div>
+
+<footer>
+  <div class="footer-logo">menu<span>fast</span></div>
+  <div class="footer-note">Made for home kitchens. Built in Mumbai.</div>
+</footer>
+
+</body>
+</html>

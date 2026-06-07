@@ -1,0 +1,134 @@
+{
+  "brand": {
+    "name": "menu",
+    "accent": "fast",
+    "cityLine": "Made for home kitchens. Built in Mumbai."
+  },
+  "nav": {
+    "links": [
+      { "label": "How it works", "href": "#how-it-works" },
+      { "label": "Pricing", "href": "#pricing" }
+    ],
+    "cta": { "label": "Start free ->", "href": "/signup" }
+  },
+  "hero": {
+    "eyebrow": "For home kitchens & cloud kitchens",
+    "titleTop": "Your menu.",
+    "titleHighlight": "Your customers.",
+    "titleBottom": "Zero commission.",
+    "subtitle": "Stop losing 28% to Swiggy. Get a beautiful digital menu, WhatsApp ordering, and your own customer list - all in one place.",
+    "primaryCta": { "label": "Get your menu in 10 minutes", "href": "/signup" },
+    "secondaryCta": { "label": "See a live example", "href": "/zainabs-bakes" },
+    "note": "14-day free trial - No credit card - Cancel anytime"
+  },
+  "socialProof": [
+    "Home bakeries",
+    "Tiffin services",
+    "Cloud kitchens",
+    "Health food startups"
+  ],
+  "problem": {
+    "heading": "Running a home kitchen is hard enough. Taking orders should not be.",
+    "description": "You are replying to the same Instagram DMs 50 times a day. Your price list is a screenshot. And Swiggy takes a cut of every single order.",
+    "cards": [
+      {
+        "icon": "💬",
+        "title": "DM chaos",
+        "description": "\"What is available?\" \"Do you deliver to Andheri?\" \"How much for a box of 12?\" - repeated all day."
+      },
+      {
+        "icon": "📋",
+        "title": "Screenshot menus",
+        "description": "A blurry photo of a handwritten list is not a menu. Your food deserves better."
+      },
+      {
+        "icon": "💸",
+        "title": "28% gone to platforms",
+        "description": "Swiggy and Zomato can take around Rs.280 from every Rs.1,000 order."
+      },
+      {
+        "icon": "🙈",
+        "title": "No customer data",
+        "description": "You cannot see who your regulars are or easily reach them for repeat orders."
+      }
+    ]
+  },
+  "howItWorks": [
+    {
+      "title": "Build your menu in minutes",
+      "description": "Add dishes, upload photos, set prices, and toggle availability daily. No technical setup required.",
+      "tag": "Takes under 10 minutes"
+    },
+    {
+      "title": "Drop the link in your Instagram bio",
+      "description": "You get a clean menu page at menufast.in/yourkitchen. One link for browsing and ordering.",
+      "tag": "Works on any phone"
+    },
+    {
+      "title": "Orders land directly on WhatsApp",
+      "description": "Customers send a structured order message with items, quantities, and notes straight to your WhatsApp.",
+      "tag": "Zero commission, ever"
+    },
+    {
+      "title": "Build your own customer list",
+      "description": "Every order helps you build your own audience for reorders, offers, and feedback.",
+      "tag": "Coming soon"
+    }
+  ],
+  "liveDemo": {
+    "slug": "zainabs-bakes",
+    "businessName": "Zainab's Bakes",
+    "businessMeta": "Home bakery - Mumbai - Orders via WhatsApp",
+    "category": "Cakes & Pastries",
+    "items": [
+      { "name": "Tres Leches (1 kg)", "price": "850", "badge": "Veg" },
+      { "name": "Biscoff Cheesecake (slice)", "price": "180", "badge": "Veg" },
+      { "name": "Dark Forest Cake", "price": "900", "soldOut": true }
+    ]
+  },
+  "pricing": {
+    "planName": "Starter",
+    "amount": "399",
+    "trialNote": "Free for 14 days",
+    "period": "per month - billed monthly",
+    "features": [
+      "Digital menu with unlimited items",
+      "WhatsApp ordering (zero commission)",
+      "QR code for your menu",
+      "Daily availability toggle",
+      "Your own menu link (menufast.in/you)",
+      "2 menu templates to choose from",
+      "Basic analytics (views, orders)"
+    ],
+    "cta": { "label": "Start free trial ->", "href": "/signup" },
+    "footnote": "Custom branding, logo upload, and more templates coming in the Pro plan."
+  },
+  "faq": [
+    {
+      "question": "Do I need a website or any tech skills?",
+      "answer": "No. If you can fill a simple form, you can set up your menu. Hosting and link setup are handled for you."
+    },
+    {
+      "question": "How does WhatsApp ordering work?",
+      "answer": "Customers tap the WhatsApp CTA and send a prefilled order message to your number with item details."
+    },
+    {
+      "question": "Can I update my menu daily?",
+      "answer": "Yes, you can quickly mark items available or sold out every day."
+    },
+    {
+      "question": "What is different from Swiggy/Zomato?",
+      "answer": "You keep your order value, own your customer list, and control how your menu is shared."
+    },
+    {
+      "question": "Can I cancel anytime?",
+      "answer": "Yes, there is no long-term lock-in."
+    }
+  ],
+  "finalCta": {
+    "heading": "Ready to own your orders?",
+    "description": "Set up your menu in 10 minutes. Share the link. Start receiving orders.",
+    "cta": { "label": "Start your free trial ->", "href": "/signup" },
+    "note": "Rs.399/month after 14 days. No card needed to start."
+  }
+}
