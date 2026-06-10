@@ -15,7 +15,7 @@ const colorPresets = [
 ];
 
 export default function Playground() {
-  const { brandName, setBrandName, primaryColor, setPrimaryColor } = usePlayground();
+  const { brandName, setBrandName, primaryColor, setPrimaryColor, businessType } = usePlayground();
 
   return (
     <section
@@ -139,16 +139,16 @@ export default function Playground() {
                 <span className="text-sm font-medium text-[#0a0a0a]">Ready to go live?</span>
               </div>
               <p className="text-xs text-[#6b6b6b] mb-3 sm:mb-4 leading-relaxed">
-                Your store goes live in under 2 minutes. No credit card required during trial.
+                Try for Free for 45 days. No credit card required during trial.
               </p>
               <Link
-                href="/signup"
+                href={`/signup?plan=free&businessType=${businessType}`}
                 className="inline-flex w-full justify-center rounded-md bg-[#0a0a0a] px-4 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
                 Start your free trial →
               </Link>
               <p className="text-center text-[10px] text-[#9a9a92] mt-3">
-                14-day free trial · No credit card
+                45-day free trial · No credit card
               </p>
             </div>
           </motion.div>

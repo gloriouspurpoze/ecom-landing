@@ -15,11 +15,11 @@
     "eyebrow": "For home kitchens & cloud kitchens",
     "titleTop": "Your menu.",
     "titleHighlight": "Your customers.",
-    "titleBottom": "Zero commission.",
-    "subtitle": "Stop losing 28% to Swiggy. Get a beautiful digital menu, WhatsApp ordering, and your own customer list - all in one place.",
-    "primaryCta": { "label": "Get your menu in 10 minutes", "href": "/signup" },
+    "titleBottom": "We simplify the rest.",
+    "subtitle": "Stop losing 28% to Food Delivery apps. Get a beautiful digital menu, WhatsApp ordering, and your own customer list - all in one place.",
+    "primaryCta": { "label": "See What your Menu could look like", "href": "/signup" },
     "secondaryCta": { "label": "See a live example", "href": "/zainabs-bakes" },
-    "note": "14-day free trial - No credit card - Cancel anytime"
+    "note": "45-day free trial - No credit card - Cancel anytime"
   },
   "socialProof": [
     "Home bakeries",
@@ -29,7 +29,7 @@
   ],
   "problem": {
     "heading": "Running a home kitchen is hard enough. Taking orders should not be.",
-    "description": "You are replying to the same Instagram DMs 50 times a day. Your price list is a screenshot. And Swiggy takes a cut of every single order.",
+    "description": "You are replying to the same Instagram DMs 50 times a day. Your price list is a screenshot. And Food Delivery apps take a cut of every single order.",
     "cards": [
       {
         "icon": "💬",
@@ -44,7 +44,7 @@
       {
         "icon": "💸",
         "title": "28% gone to platforms",
-        "description": "Swiggy and Zomato can take around Rs.280 from every Rs.1,000 order."
+        "description": "Food Delivery apps can take around Rs.280 from every Rs.1,000 order."
       },
       {
         "icon": "🙈",
@@ -117,7 +117,7 @@
       "answer": "Yes, you can quickly mark items available or sold out every day."
     },
     {
-      "question": "What is different from Swiggy/Zomato?",
+      "question": "What is different from Food Delivery apps?",
       "answer": "You keep your order value, own your customer list, and control how your menu is shared."
     },
     {

@@ -4,9 +4,9 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const types: { id: BusinessType; label: string; emoji: string; desc: string }[] = [
-  { id: "restaurant", label: "Restaurant & Cafe", emoji: "🍽️", desc: "Dine-in & delivery menus" },
-  { id: "retail", label: "Retail Boutique", emoji: "🛍️", desc: "Fashion & lifestyle stores" },
-  { id: "grocery", label: "Grocery & Essentials", emoji: "🥬", desc: "Fresh produce & delivery" },
+  { id: "restaurant", label: "Restaurant, Cafe or Cloud Kitchen", emoji: "🍽️", desc: "Dine-in & delivery menus" },
+  { id: "retail", label: "E-Commerce", emoji: "🛍️", desc: "Home Items, Fashion & lifestyle stores" },
+  { id: "homeservice", label: "Home Services", emoji: "🏠", desc: "Home Services like Plumbers, Electricians, etc." },
 ];
 
 export default function Hero() {
@@ -53,7 +53,7 @@ export default function Hero() {
           <br />
           <em className="text-[#1d9e75] not-italic">Your customers.</em>
           <br />
-          Zero commission.
+          We simplify the rest.
         </motion.h1>
 
         <motion.p
@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.65, delay: 0.2 }}
           className="mx-auto max-w-xl text-base sm:text-lg font-light leading-7 sm:leading-8 text-[#6b6b6b] mb-8 sm:mb-10"
         >
-          Stop losing 28% to Swiggy. Get a beautiful digital menu, WhatsApp ordering,
+          Stop losing 28% to Food Delivery apps. Get a beautiful digital menu, WhatsApp ordering,
           and your own customer list — all in one place.
         </motion.p>
 
@@ -142,7 +142,7 @@ export default function Hero() {
             }}
             className="group w-full sm:w-auto rounded-md bg-[#0a0a0a] px-7 py-3.5 sm:py-3 text-sm font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
           >
-            Get your menu in 10 minutes
+            See What your Menu could look like
             <ArrowRight size={14} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
           </a>
           <a
@@ -159,7 +159,7 @@ export default function Hero() {
           transition={{ duration: 0.65, delay: 0.52 }}
           className="mt-4 sm:mt-5 text-xs sm:text-sm text-[#9a9a92]"
         >
-          14-day free trial · No credit card · Cancel anytime
+          45-day free trial · No credit card · Cancel anytime
         </motion.p>
 
         {/* Social proof strip */}

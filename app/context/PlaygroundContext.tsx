@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
 
-export type BusinessType = "restaurant" | "retail" | "grocery";
+export type BusinessType = "restaurant" | "retail" | "homeservice";
 
 interface PlaygroundState {
   businessType: BusinessType;

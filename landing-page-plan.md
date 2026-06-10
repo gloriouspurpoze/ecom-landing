@@ -75,7 +75,7 @@ Create a unified state provider to handle user configurations (`@/src/context/Pl
 "use client";
 import React, { createContext, useContext, useState } from "react";
 
-export type BusinessType = "restaurant" | "retail" | "grocery";
+export type BusinessType = "restaurant" | "retail" | "homeservice";
 
 interface PlaygroundState {
   businessType: BusinessType;
@@ -129,8 +129,8 @@ export default function Hero() {
 
   const types: { id: BusinessType; label: string; icon: any }[] = [
     { id: "restaurant", label: "Restaurant & Cafe", icon: Utensils },
-    { id: "retail", label: "Retail Boutique", icon: ShoppingBag },
-    { id: "grocery", label: "Grocery & Essentials", icon: Truck },
+    { id: "retail", label: "E-Commerce", icon: ShoppingBag },
+    { id: "homeservice", label: "Home Services", icon: Truck },
   ];
 
   return (

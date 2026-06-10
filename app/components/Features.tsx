@@ -7,7 +7,7 @@ const features = [
     icon: ShieldCheck,
     title: "Zero Commission. Always.",
     description:
-      "Stop giving 20–30% of every order to Zomato or Swiggy. Every rupee your customers pay goes directly to you.",
+      "Stop giving 20–30% of every order to Food Delivery apps. Every rupee your customers pay goes directly to you.",
     iconColor: "text-[#1d9e75]",
     iconBg: "bg-[#e1f5ee]",
   },
@@ -136,7 +136,7 @@ export default function Features() {
                 The numbers speak for themselves
               </h3>
               <p className="text-xs sm:text-sm text-[#6b6b6b] leading-relaxed">
-                A restaurant doing ₹2L/month on Zomato loses ₹50,000+ to commission.
+                A restaurant doing ₹2L/month on Food Delivery apps loses ₹50,000+ to commission.
                 That&apos;s ₹6 lakhs a year.
               </p>
             </div>

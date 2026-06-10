@@ -18,7 +18,7 @@ const plans = [
       "Login / OTP via phone number",
     ],
     cta: "Get Started Free",
-    href: "/signup",
+    href: "/signup?plan=free",
     highlighted: false,
   },
   {
@@ -35,7 +35,7 @@ const plans = [
       "Order status updates on web app",
     ],
     cta: "Start Free Trial",
-    href: "/signup",
+    href: "/signup?plan=growth",
     highlighted: true,
   },
   {
@@ -52,7 +52,7 @@ const plans = [
       "Analytics dashboard",
     ],
     cta: "Start Free Trial",
-    href: "/signup",
+    href: "/signup?plan=premium",
     highlighted: false,
   },
 ];

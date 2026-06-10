@@ -56,29 +56,29 @@ const verticalData = {
       },
     ],
   },
-  grocery: {
+  homeservice: {
     heroImg:
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
-    category: "Fresh Farm Produce",
-    badge: "🌿 Organic",
+      "https://plus.unsplash.com/premium_photo-1661884973994-d7625e52631a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Home Services",
+    badge: "Trusted Service Providers",
     items: [
       {
-        name: "Berry Mix",
-        desc: "Pesticide-free seasonal berries",
+        name: "Plumber",
+        desc: "Plumbing services for your home",
         price: "₹299",
-        img: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=200&q=80",
+        img: "https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGx1bWJlcnxlbnwwfHwwfHx8MA%3D%3D",
       },
       {
-        name: "Olive Blend Oil",
-        desc: "First extraction, cold pressed",
+        name: "Electrician",
+        desc: "Electrical services for your home",
         price: "₹899",
-        img: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=200&q=80",
+        img: "https://images.unsplash.com/photo-1660330589693-99889d60181e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
-        name: "Herb Bundle",
-        desc: "Rosemary, thyme, basil",
+        name: "Carpenter",
+        desc: "Carpentry services for your home",
         price: "₹149",
-        img: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=200&q=80",
+        img: "https://plus.unsplash.com/premium_photo-1661884973994-d7625e52631a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ],
   },

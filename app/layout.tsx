@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | MenuFast",
   },
   description:
-    "Launch your branded online store in 2 minutes. Zero commission. WhatsApp ordering. Own your customer data. Built for Indian restaurants, home kitchens, retail & grocery businesses.",
+    "Launch your branded online store in 2 minutes. Zero commission. WhatsApp ordering. Own your customer data. Built for Indian restaurants, home kitchens, home service providers, retail & grocery businesses.",
   keywords: [
     "digital menu India",
     "online ordering system India",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "WhatsApp food ordering",
     "home kitchen online store",
     "cloud kitchen app India",
-    "restaurant app without Swiggy Zomato commission",
+    "restaurant app without Food Delivery app commission",
     "food ordering app India",
     "menu builder India",
     "zero commission food delivery",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     siteName: "MenuFast",
     title: "MenuFast — Zero Commission Online Ordering for Local Businesses",
     description:
-      "Stop paying 20–30% to Swiggy & Zomato. Build your own branded store, receive orders on WhatsApp, and keep 100% of your profits.",
+      "Stop paying 20–30% to Food Delivery apps. Build your own branded store, receive orders on WhatsApp, and keep 100% of your profits.",
     images: [
       {
         url: "/og-image.png",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MenuFast — Zero Commission Online Ordering",
     description:
-      "Stop paying 20–30% to Swiggy & Zomato. Build your own branded store in 2 minutes. Keep 100% of profits.",
+      "Stop paying 20–30% to Food Delivery apps. Build your own branded store in 2 minutes. Keep 100% of profits.",
     images: ["/og-image.png"],
   },
   alternates: {

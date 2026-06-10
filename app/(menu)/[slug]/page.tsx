@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import menuMockData from "@/data/menu-mock-data.json";
 
 type MenuCollection = typeof menuMockData;
@@ -73,25 +74,34 @@ export default function MenuPage({
     <main className="min-h-screen bg-[#f0ede8] p-6">
       <div className="mx-auto max-w-5xl">
         <div className="mb-6 flex flex-wrap items-center gap-3 rounded-lg border border-[#e5e0d8] bg-[#f5f2ec] p-2">
-          <span className="rounded-md bg-white px-3 py-1 text-xs font-medium text-[#0a0a0a]">Template</span>
-          <span
-            className={`rounded-md px-3 py-1 text-xs ${
+          <Link
+            href="/"
+            className="rounded-md bg-white px-3 py-1 text-xs font-medium text-[#0a0a0a] hover:bg-[#f0ede8] transition"
+          >
+            ← Home
+          </Link>
+          <span className="text-[#ccc]">|</span>
+          <span className="rounded-md bg-white px-3 py-1 text-xs font-medium text-[#6b6b6b]">Template</span>
+          <Link
+            href="/priyas-tiffin"
+            className={`rounded-md px-3 py-1 text-xs transition ${
               data.template === "minimal"
                 ? "bg-[#1a1a1a] text-white"
-                : "bg-transparent text-[#6b6b6b]"
+                : "bg-transparent text-[#6b6b6b] hover:bg-white"
             }`}
           >
             Minimal
-          </span>
-          <span
-            className={`rounded-md px-3 py-1 text-xs ${
+          </Link>
+          <Link
+            href="/zainabs-bakes"
+            className={`rounded-md px-3 py-1 text-xs transition ${
               data.template === "cards"
                 ? "bg-[#1a1a1a] text-white"
-                : "bg-transparent text-[#6b6b6b]"
+                : "bg-transparent text-[#6b6b6b] hover:bg-white"
             }`}
           >
             Cards
-          </span>
+          </Link>
           <span className="ml-auto text-xs text-[#8f8f86]">Mock JSON data source</span>
         </div>
 

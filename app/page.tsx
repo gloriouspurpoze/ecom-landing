@@ -10,14 +10,14 @@ import FooterCTA from "@/app/components/FooterCTA";
 export const metadata: Metadata = {
   title: "MenuFast — Commission-Free Digital Storefront for Indian Businesses",
   description:
-    "Launch your branded online store in 2 minutes. Zero commission. WhatsApp ordering. Own your customer data. Perfect for Indian restaurants, home kitchens, retail & grocery businesses.",
+    "Launch your branded online store in 2 minutes. Zero commission. WhatsApp ordering. Own your customer data. Perfect for Indian restaurants, home kitchens, home service providers, retail & grocery businesses.",
   alternates: {
     canonical: "https://menufast.in",
   },
   openGraph: {
     title: "MenuFast — Zero Commission Online Ordering for Local Businesses",
     description:
-      "Stop paying 20–30% to Swiggy & Zomato. Build your own branded store, receive orders on WhatsApp, and keep 100% of your profits.",
+      "Stop paying 20–30% to Food Delivery apps. Build your own branded store, receive orders on WhatsApp, and keep 100% of your profits.",
     url: "https://menufast.in",
   },
 };
@@ -31,7 +31,7 @@ const jsonLd = {
       name: "MenuFast",
       url: "https://menufast.in",
       description:
-        "Commission-free digital storefront SaaS for Indian local businesses — restaurants, home kitchens, retail, and grocery.",
+        "Commission-free digital storefront SaaS for Indian local businesses — restaurants, home kitchens, retail, and home services.",
       foundingLocation: {
         "@type": "Place",
         name: "Mumbai, India",
@@ -46,7 +46,7 @@ const jsonLd = {
       operatingSystem: "Web",
       url: "https://menufast.in",
       description:
-        "Build a commission-free branded online store with WhatsApp ordering, real-time menu management, and customer data ownership. No Swiggy or Zomato commission.",
+        "Build a commission-free branded online store with WhatsApp ordering, real-time menu management, and customer data ownership. No Food Delivery app commission.",
       offers: [
         {
           "@type": "Offer",
@@ -117,7 +117,7 @@ const jsonLd = {
           name: "What types of businesses can use MenuFast?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "MenuFast is built for Indian restaurants, cafes, home kitchens, tiffin services, cloud kitchens, retail boutiques, and grocery stores.",
+            text: "MenuFast is built for Indian restaurants, cafes, home kitchens, tiffin services, cloud kitchens, home service providers, retail boutiques, and grocery stores.",
           },
         },
       ],
