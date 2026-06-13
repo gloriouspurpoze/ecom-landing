@@ -1,13 +1,14 @@
 "use client";
 import { usePlayground } from "@/app/context/PlaygroundContext";
 import MockupFrame from "./MockupFrame";
+import FloatPhone from "./FloatPhone";
 import { motion } from "framer-motion";
 import { Palette, Type, Rocket, Check } from "lucide-react";
 import Link from "next/link";
 
 const colorPresets = [
+  { hex: "#1d9e75", label: "Brand Green", gradient: "from-emerald-400 to-teal-500" },
   { hex: "#FF5A1F", label: "Crimson", gradient: "from-orange-500 to-red-500" },
-  { hex: "#10B981", label: "Emerald", gradient: "from-emerald-400 to-teal-500" },
   { hex: "#6366F1", label: "Violet", gradient: "from-violet-400 to-indigo-500" },
   { hex: "#F59E0B", label: "Amber", gradient: "from-amber-400 to-yellow-500" },
   { hex: "#EC4899", label: "Rose", gradient: "from-pink-400 to-rose-500" },
@@ -21,7 +22,7 @@ export default function Playground() {
     <section
       id="playground"
       aria-labelledby="playground-heading"
-      className="border-t border-[#e5e5e0] py-16 sm:py-20 px-4 sm:px-6 scroll-mt-16"
+      className="border-t border-[#e5e5e0] bg-white py-16 sm:py-20 px-4 sm:px-6 scroll-mt-16"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-10 sm:mb-12">
@@ -31,17 +32,17 @@ export default function Playground() {
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
           >
-            <p className="mb-3 sm:mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-[0.15em] text-[#8d8d84]">
-              See it live
+            <p className="mb-3 sm:mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[#757570]">
+              Make it yours
             </p>
             <h2
               id="playground-heading"
               className="font-display text-3xl sm:text-4xl tracking-tight text-[#0a0a0a]"
             >
-              Build it. See it. Launch it.
+              Add your name. Pick your colour.
             </h2>
             <p className="mt-3 sm:mt-4 max-w-lg text-sm sm:text-base text-[#6b6b6b]">
-              Customize your storefront below and watch it update in real time.
+              Type your brand name and choose a colour — your storefront updates instantly.
             </p>
           </motion.div>
         </div>
@@ -147,9 +148,6 @@ export default function Playground() {
               >
                 Start your free trial →
               </Link>
-              <p className="text-center text-[10px] text-[#9a9a92] mt-3">
-                45-day free trial · No credit card
-              </p>
             </div>
           </motion.div>
 
@@ -165,9 +163,9 @@ export default function Playground() {
             <p className="text-xs text-[#9a9a92] lg:hidden">
               ↓ Customize below to see changes live
             </p>
-            <div className="animate-float">
+            <FloatPhone>
               <MockupFrame />
-            </div>
+            </FloatPhone>
           </motion.div>
         </div>
       </div>

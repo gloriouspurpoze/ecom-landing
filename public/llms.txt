@@ -1,0 +1,54 @@
+# MenuFast
+
+> Zero-commission online ordering and digital storefront software for Indian local businesses — restaurants, cafes, cloud kitchens, home bakers, tiffin services, retail shops, and home service providers.
+
+MenuFast helps business owners launch a branded online store in minutes, receive orders on WhatsApp, accept optional online payments, and keep 100% of order value with no delivery-app commission.
+
+Built in Mumbai, India. Site: https://menufast.in
+
+## Product
+
+- Commission-free digital menus and online storefronts
+- WhatsApp ordering with structured order messages
+- Real-time menu, price, and availability control
+- QR codes and shareable links (menufast.in/yourbusiness)
+- Optional payment gateway on paid plans (2% gateway fee only)
+- Orders and sales dashboard on Growth and Premium plans
+- Branding, custom domain, loyalty, and analytics on Premium
+
+## Business types supported
+
+- Restaurant, cafe, and cloud kitchen
+- E-commerce and retail (fashion, lifestyle, home items)
+- Home services (plumbers, electricians, carpenters, etc.)
+
+## Pricing (INR, monthly)
+
+- Free: ₹0 forever — unlimited items, WhatsApp alerts, QR code, 2 templates, menu management
+- Growth: ₹549/month — payments, order dashboard, WhatsApp status updates (45-day free trial)
+- Premium: ₹999/month — full branding, logo, custom domain, loyalty, analytics (45-day free trial)
+
+## Key pages
+
+- Home: https://menufast.in/
+- Sign up: https://menufast.in/signup
+- Login: https://menufast.in/login
+- Blog (guides): https://menufast.in/blog
+- Commission calculator (free tool): https://menufast.in/commission-calculator
+- Live demo — Zainab's Bakes: https://menufast.in/zainabs-bakes
+- Live demo — Priya's Tiffin: https://menufast.in/priyas-tiffin
+- Privacy policy: https://menufast.in/privacy
+- Terms of service: https://menufast.in/terms
+- Refund policy: https://menufast.in/refund
+- Contact: https://menufast.in/contact
+- Sitemap: https://menufast.in/sitemap.xml
+- Robots: https://menufast.in/robots.txt
+
+## Contact & location
+
+- Founded in Mumbai, India
+- Serves businesses across India (IN)
+
+## Optional
+
+Full structured data (Organization, SoftwareApplication, FAQPage, Reviews) is available in JSON-LD on the homepage.

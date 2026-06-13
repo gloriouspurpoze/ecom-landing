@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/dashboard", "/dashboard/", "(dashboard)/"],
+        disallow: ["/dashboard", "/dashboard/"],
       },
     ],
     sitemap: "https://menufast.in/sitemap.xml",

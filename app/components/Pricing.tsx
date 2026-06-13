@@ -8,13 +8,14 @@ const plans = [
     name: "Free",
     price: "₹0",
     period: "/ forever",
-    description: "Everything you need to get started. No credit card required.",
+    trialNote: "No credit card required",
+    description: "Everything you need to get started.",
     features: [
       "Unlimited product / menu items",
       "WhatsApp order notifications",
       "Two free templates",
-      "QR code for menu link",
-      "Full menu management",
+      "QR code for store link",
+      "Full catalogue management",
       "Login / OTP via phone number",
     ],
     cta: "Get Started Free",
@@ -25,7 +26,8 @@ const plans = [
     name: "Growth",
     price: "₹549",
     period: "/month",
-    description: "For businesses ready to accept payments and track their sales.",
+    trialNote: "45-day free trial · No card to start",
+    description: "Accept payments and track sales from one dashboard.",
     badge: "Most Popular",
     features: [
       "Everything in Free",
@@ -42,7 +44,8 @@ const plans = [
     name: "Premium",
     price: "₹999",
     period: "/month",
-    description: "Full branding control and advanced tools for serious businesses.",
+    trialNote: "45-day free trial · No card to start",
+    description: "Full branding and advanced tools for serious businesses.",
     features: [
       "Everything in Growth",
       "Brand logo upload",
@@ -72,7 +75,7 @@ export default function Pricing() {
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
           >
-            <p className="mb-3 sm:mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-[0.15em] text-[#8d8d84]">
+            <p className="mb-3 sm:mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[#757570]">
               Pricing
             </p>
             <h2
@@ -82,7 +85,8 @@ export default function Pricing() {
               Simple pricing. Start free.
             </h2>
             <p className="mt-2 sm:mt-3 text-sm sm:text-base text-[#6b6b6b]">
-              No credit card required to get started. Upgrade only when you need to.
+              Free forever on the base plan. Paid plans include a 45-day trial — no credit card
+              required.
             </p>
           </motion.div>
         </div>
@@ -101,7 +105,6 @@ export default function Pricing() {
                   : "bg-white border-[#e5e5e0]"
               } ${plan.badge ? "mt-4 sm:mt-4" : ""}`}
             >
-              {/* Popular badge — sits above the card */}
               {plan.badge && (
                 <div
                   aria-label={plan.badge}
@@ -120,6 +123,9 @@ export default function Pricing() {
                     </span>
                     <span className="text-[#6b6b6b] text-sm">{plan.period}</span>
                   </div>
+                  {plan.trialNote && (
+                    <p className="text-xs font-medium text-[#0f6e56] mb-2">{plan.trialNote}</p>
+                  )}
                   <p className="text-xs sm:text-sm text-[#6b6b6b] leading-relaxed">{plan.description}</p>
                 </div>
 
@@ -151,7 +157,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="mt-5 sm:mt-6 text-[10px] sm:text-xs text-[#9a9a92]">
+        <p className="mt-5 sm:mt-6 text-xs text-[#757570]">
           * 2% fee applies only to payments processed through the built-in payment gateway
         </p>
       </div>

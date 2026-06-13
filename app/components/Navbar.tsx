@@ -5,9 +5,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
+  { href: "#how-it-works", label: "How it works" },
   { href: "#playground", label: "Live Demo" },
   { href: "#pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {
@@ -44,6 +45,10 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
+    if (!href.startsWith("#")) {
+      window.location.href = href;
+      return;
+    }
     const id = href.replace("#", "");
     setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });

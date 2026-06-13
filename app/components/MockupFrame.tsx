@@ -1,14 +1,43 @@
 "use client";
-import { usePlayground } from "@/app/context/PlaygroundContext";
+import Image from "next/image";
+import { usePlayground, type BusinessType } from "@/app/context/PlaygroundContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingCart, Star, Clock, Plus, Search, Home, Heart } from "lucide-react";
+import { ShoppingCart, Star, Clock, Plus, Search, Lock } from "lucide-react";
 
-const verticalData = {
+function toSlug(name: string): string {
+  const cleaned = name
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+  return cleaned || "yourstore";
+}
+
+type VerticalContent = {
+  heroImg: string;
+  category: string;
+  badge: string;
+  searchPlaceholder: string;
+  meta: { icon: "star" | "clock"; text: string }[];
+  cartLabel: string;
+  cartTotal: string;
+  items: { name: string; desc: string; price: string; img: string }[];
+};
+
+const verticalData: Record<BusinessType, VerticalContent> = {
   restaurant: {
     heroImg:
       "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80",
     category: "Gourmet Kitchen",
     badge: "🔥 Trending",
+    searchPlaceholder: "Search dishes...",
+    meta: [
+      { icon: "star", text: "4.9 (120+)" },
+      { icon: "clock", text: "20–30 min" },
+    ],
+    cartLabel: "View Cart",
+    cartTotal: "₹398",
     items: [
       {
         name: "Smash Burger",
@@ -35,6 +64,13 @@ const verticalData = {
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
     category: "Summer Collection",
     badge: "✨ New Arrivals",
+    searchPlaceholder: "Search products...",
+    meta: [
+      { icon: "star", text: "4.8 (80+)" },
+      { icon: "clock", text: "Ships in 2–3 days" },
+    ],
+    cartLabel: "View Cart",
+    cartTotal: "₹5,898",
     items: [
       {
         name: "Linen Overshirt",
@@ -58,27 +94,34 @@ const verticalData = {
   },
   homeservice: {
     heroImg:
-      "https://plus.unsplash.com/premium_photo-1661884973994-d7625e52631a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80",
     category: "Home Services",
-    badge: "Trusted Service Providers",
+    badge: "✓ Verified pros",
+    searchPlaceholder: "Search services...",
+    meta: [
+      { icon: "star", text: "4.9 verified" },
+      { icon: "clock", text: "Same-day slots" },
+    ],
+    cartLabel: "Book now",
+    cartTotal: "₹1,198",
     items: [
       {
-        name: "Plumber",
-        desc: "Plumbing services for your home",
+        name: "Plumber visit",
+        desc: "Leak repair, tap fitting & more",
         price: "₹299",
-        img: "https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGx1bWJlcnxlbnwwfHwwfHx8MA%3D%3D",
+        img: "https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=200&auto=format&fit=crop&q=60",
       },
       {
         name: "Electrician",
-        desc: "Electrical services for your home",
-        price: "₹899",
-        img: "https://images.unsplash.com/photo-1660330589693-99889d60181e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        desc: "Wiring, switches & installations",
+        price: "₹499",
+        img: "https://images.unsplash.com/photo-1660330589693-99889d60181e?w=200&auto=format&fit=crop&q=80",
       },
       {
-        name: "Carpenter",
-        desc: "Carpentry services for your home",
-        price: "₹149",
-        img: "https://plus.unsplash.com/premium_photo-1661884973994-d7625e52631a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        name: "AC service",
+        desc: "Deep clean & gas refill",
+        price: "₹899",
+        img: "https://images.unsplash.com/photo-1631545806609-0f44ca0e4e8b?w=200&auto=format&fit=crop&q=80",
       },
     ],
   },
@@ -88,34 +131,31 @@ export default function MockupFrame() {
   const { businessType, brandName, primaryColor } = usePlayground();
   const content = verticalData[businessType];
   const displayName = brandName.trim() || "Your Storefront";
+  const storeUrl = `menufast.in/${toSlug(brandName)}`;
 
   return (
     <div className="relative flex justify-center">
-      {/* Dynamic glow that matches brand color */}
       <div
         aria-hidden="true"
         className="absolute inset-0 rounded-[50px] blur-3xl opacity-20 scale-90 pointer-events-none"
         style={{ backgroundColor: primaryColor }}
       />
 
-      {/* Phone frame — fluid width capped at 300px */}
       <div
         className="relative w-full max-w-[260px] sm:max-w-[300px] rounded-[40px] sm:rounded-[44px] border-[7px] sm:border-[8px] border-[#d1d1ca] bg-[#e5e5e0] shadow-2xl overflow-hidden"
         style={{ aspectRatio: "9/19.5" }}
         role="img"
-        aria-label={`Live preview of ${displayName} storefront`}
+        aria-label={`Live preview of the ${displayName} web store, open in a mobile browser`}
       >
-        {/* Dynamic island / notch */}
-        <div
-          aria-hidden="true"
-          className="absolute top-2 left-1/2 -translate-x-1/2 w-20 sm:w-24 h-4 sm:h-5 bg-[#e5e5e0] rounded-full z-30 flex items-center justify-center"
-        >
-          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#bfbfb8]" />
-        </div>
+        <div className="flex-1 bg-white overflow-y-auto h-full scrollbar-none flex flex-col">
+          {/* Mobile browser chrome — signals this is a website, not an app */}
+          <div className="shrink-0 bg-[#f1f1ee] px-2.5 pt-2 pb-1.5 border-b border-gray-200">
+            <div className="flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 shadow-sm">
+              <Lock size={8} className="text-gray-400 shrink-0" aria-hidden="true" />
+              <span className="text-[8px] sm:text-[9px] text-gray-500 truncate">{storeUrl}</span>
+            </div>
+          </div>
 
-        {/* Screen */}
-        <div className="flex-1 bg-white overflow-y-auto h-full scrollbar-none flex flex-col pt-6">
-          {/* Header */}
           <div className="px-3 py-2 flex items-center justify-between border-b border-gray-100 shrink-0">
             <span className="font-black text-[10px] sm:text-[11px] text-gray-900 truncate max-w-[100px] sm:max-w-[120px]">
               {displayName}
@@ -131,15 +171,15 @@ export default function MockupFrame() {
             </div>
           </div>
 
-          {/* Search bar */}
           <div className="px-3 py-1.5 shrink-0">
             <div className="flex items-center gap-1.5 bg-gray-100 rounded-xl px-2 py-1.5">
               <Search size={9} className="text-gray-400 shrink-0" />
-              <span className="text-[8px] sm:text-[9px] text-gray-400">Search items...</span>
+              <span className="text-[8px] sm:text-[9px] text-gray-400">
+                {content.searchPlaceholder}
+              </span>
             </div>
           </div>
 
-          {/* Animated content */}
           <AnimatePresence mode="wait">
             <motion.div
               key={businessType}
@@ -149,18 +189,19 @@ export default function MockupFrame() {
               transition={{ duration: 0.28 }}
               className="flex-1 overflow-y-auto px-2.5 sm:px-3 pb-3 scrollbar-none"
             >
-              {/* Hero image */}
               <div className="relative h-24 sm:h-28 rounded-xl overflow-hidden mb-2.5 sm:mb-3 bg-gray-100">
-                <img
+                <Image
                   src={content.heroImg}
                   alt={content.category}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="300px"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-1.5 left-2 right-2 flex items-end justify-between">
-                  <span className="text-white text-[8px] sm:text-[9px] font-black">{content.category}</span>
+                  <span className="text-white text-[8px] sm:text-[9px] font-black">
+                    {content.category}
+                  </span>
                   <span
                     className="text-white text-[7px] sm:text-[8px] font-bold px-1.5 py-0.5 rounded-md backdrop-blur-sm"
                     style={{ backgroundColor: `${primaryColor}cc` }}
@@ -170,36 +211,42 @@ export default function MockupFrame() {
                 </div>
               </div>
 
-              {/* Rating row */}
               <div className="flex items-center gap-3 mb-2.5 sm:mb-3 text-[8px] sm:text-[9px] text-gray-500">
-                <span className="flex items-center gap-1">
-                  <Star size={8} className="fill-amber-400 text-amber-400" />
-                  4.9 (120+)
-                </span>
-                <span className="flex items-center gap-1">
-                  <Clock size={8} />
-                  20–30 min
-                </span>
+                {content.meta.map((m) => (
+                  <span key={m.text} className="flex items-center gap-1">
+                    {m.icon === "star" ? (
+                      <Star size={8} className="fill-amber-400 text-amber-400" />
+                    ) : (
+                      <Clock size={8} />
+                    )}
+                    {m.text}
+                  </span>
+                ))}
               </div>
 
-              {/* Items */}
               <div className="space-y-1.5 sm:space-y-2">
-                {content.items.map((item, i) => (
+                {content.items.map((item) => (
                   <div
-                    key={i}
+                    key={item.name}
                     className="flex items-center gap-2 p-1.5 sm:p-2 rounded-xl border border-gray-100 bg-white"
                   >
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover shrink-0 bg-gray-100"
-                    />
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden shrink-0 bg-gray-100">
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-bold text-[9px] sm:text-[10px] text-gray-900 truncate">{item.name}</p>
+                      <p className="font-bold text-[9px] sm:text-[10px] text-gray-900 truncate">
+                        {item.name}
+                      </p>
                       <p className="text-[7px] sm:text-[8px] text-gray-400 truncate">{item.desc}</p>
-                      <p className="font-black text-[9px] sm:text-[10px] text-gray-900 mt-0.5">{item.price}</p>
+                      <p className="font-black text-[9px] sm:text-[10px] text-gray-900 mt-0.5">
+                        {item.price}
+                      </p>
                     </div>
                     <motion.button
                       whileTap={{ scale: 0.88 }}
@@ -215,7 +262,7 @@ export default function MockupFrame() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Bottom checkout bar */}
+          {/* Sticky checkout bar with WhatsApp ordering — the web-store conversion point */}
           <div className="px-2.5 sm:px-3 py-2 bg-white border-t border-gray-100 shrink-0">
             <motion.div
               style={{ backgroundColor: primaryColor }}
@@ -223,31 +270,11 @@ export default function MockupFrame() {
               animate={{ backgroundColor: primaryColor }}
               transition={{ duration: 0.3 }}
             >
-              View Cart · ₹398
+              {content.cartLabel} · {content.cartTotal}
             </motion.div>
-          </div>
-
-          {/* Bottom nav */}
-          <div className="flex items-center justify-around py-1.5 sm:py-2 border-t border-gray-100 bg-white shrink-0">
-            {[
-              { icon: Home, label: "Home", active: true },
-              { icon: Search, label: "Search", active: false },
-              { icon: Heart, label: "Saved", active: false },
-            ].map(({ icon: Icon, label, active }) => (
-              <div key={label} className="flex flex-col items-center gap-0.5">
-                <Icon
-                  size={11}
-                  className={active ? "" : "text-gray-400"}
-                  style={active ? { color: primaryColor } : {}}
-                />
-                <span
-                  className={`text-[6px] sm:text-[7px] ${active ? "font-bold" : "text-gray-400"}`}
-                  style={active ? { color: primaryColor } : {}}
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
+            <p className="mt-1.5 text-center text-[7px] sm:text-[8px] text-gray-400">
+              Order sent to WhatsApp · no app to install
+            </p>
           </div>
         </div>
       </div>
