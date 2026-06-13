@@ -3,21 +3,31 @@ import { PlaygroundProvider } from "@/app/context/PlaygroundContext";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import Features from "@/app/components/Features";
+import HowItWorks from "@/app/components/HowItWorks";
 import Playground from "@/app/components/Playground";
+import DashboardShowcase from "@/app/components/DashboardShowcase";
+import CommissionCalculator from "@/app/components/CommissionCalculator";
+import Comparison from "@/app/components/Comparison";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Testimonials from "@/app/components/Testimonials";
 import Pricing from "@/app/components/Pricing";
+import LeadCapture from "@/app/components/LeadCapture";
+import FAQ from "@/app/components/FAQ";
 import FooterCTA from "@/app/components/FooterCTA";
+import { FAQS, SITE } from "@/data/landing";
 
 export const metadata: Metadata = {
-  title: "MenuFast — Commission-Free Digital Storefront for Indian Businesses",
+  title: "MenuFast — Zero-Commission Online Store for Restaurants, Retail & Services",
   description:
-    "Launch your branded online store in 2 minutes. Zero commission. WhatsApp ordering. Own your customer data. Perfect for Indian restaurants, home kitchens, home service providers, retail & grocery businesses.",
+    "Launch your branded online store in 2 minutes. Zero commission, WhatsApp ordering, and your own customer data. For restaurants, retail shops, and home service providers across India.",
   alternates: {
     canonical: "https://menufast.in",
   },
   openGraph: {
-    title: "MenuFast — Zero Commission Online Ordering for Local Businesses",
+    title: "MenuFast — Zero-Commission Online Store for Local Businesses",
     description:
-      "Stop paying 20–30% to Food Delivery apps. Build your own branded store, receive orders on WhatsApp, and keep 100% of your profits.",
+      "Stop paying 20–30% to marketplaces. Build your own branded store, take orders on WhatsApp, and keep 100% of your profits.",
     url: "https://menufast.in",
   },
 };
@@ -27,11 +37,11 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://menufast.in/#organization",
-      name: "MenuFast",
-      url: "https://menufast.in",
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: SITE.url,
       description:
-        "Commission-free digital storefront SaaS for Indian local businesses — restaurants, home kitchens, retail, and home services.",
+        "Commission-free online ordering and digital storefront software for Indian local businesses — restaurants, retail shops, and home service providers.",
       foundingLocation: {
         "@type": "Place",
         name: "Mumbai, India",
@@ -40,13 +50,13 @@ const jsonLd = {
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://menufast.in/#software",
-      name: "MenuFast",
+      "@id": `${SITE.url}/#software`,
+      name: SITE.name,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      url: "https://menufast.in",
+      url: SITE.url,
       description:
-        "Build a commission-free branded online store with WhatsApp ordering, real-time menu management, and customer data ownership. No Food Delivery app commission.",
+        "Build a commission-free branded online store with WhatsApp ordering, real-time catalogue management, optional online payments, and customer data ownership.",
       offers: [
         {
           "@type": "Offer",
@@ -54,7 +64,7 @@ const jsonLd = {
           price: "0",
           priceCurrency: "INR",
           description:
-            "Unlimited menu items, WhatsApp order notifications, QR code, full menu management",
+            "Unlimited items, WhatsApp order notifications, QR code, two templates and full catalogue management.",
         },
         {
           "@type": "Offer",
@@ -62,7 +72,7 @@ const jsonLd = {
           price: "549",
           priceCurrency: "INR",
           description:
-            "Everything in Free, plus payment gateway, order dashboard, WhatsApp updates to customers",
+            "Everything in Free, plus online payments, orders & sales dashboard, and WhatsApp status updates to customers. 45-day free trial.",
         },
         {
           "@type": "Offer",
@@ -70,17 +80,17 @@ const jsonLd = {
           price: "999",
           priceCurrency: "INR",
           description:
-            "Everything in Growth, plus full branding control, custom domain, analytics, loyalty program",
+            "Everything in Growth, plus full branding control, logo upload, custom domain, loyalty program and analytics. 45-day free trial.",
         },
       ],
     },
     {
       "@type": "WebPage",
-      "@id": "https://menufast.in/",
-      url: "https://menufast.in",
-      name: "MenuFast — Commission-Free Digital Storefront for Indian Businesses",
-      isPartOf: { "@id": "https://menufast.in/#organization" },
-      about: { "@id": "https://menufast.in/#software" },
+      "@id": `${SITE.url}/`,
+      url: SITE.url,
+      name: "MenuFast — Zero-Commission Online Store for Restaurants, Retail & Services",
+      isPartOf: { "@id": `${SITE.url}/#organization` },
+      about: { "@id": `${SITE.url}/#software` },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -88,39 +98,22 @@ const jsonLd = {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://menufast.in",
+            item: SITE.url,
           },
         ],
       },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Does MenuFast charge any commission on orders?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. MenuFast charges zero commission on orders. You keep 100% of every rupee your customers pay. There is a 2% payment gateway fee only if you use the built-in payment processing.",
-          },
+      "@id": `${SITE.url}/#faq`,
+      mainEntity: FAQS.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
         },
-        {
-          "@type": "Question",
-          name: "How long does it take to set up my store on MenuFast?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Your store goes live in under 2 minutes. You can add your menu items, set your brand name and colors, and start receiving orders on WhatsApp immediately.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What types of businesses can use MenuFast?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "MenuFast is built for Indian restaurants, cafes, home kitchens, tiffin services, cloud kitchens, home service providers, retail boutiques, and grocery stores.",
-          },
-        },
-      ],
+      })),
     },
   ],
 };
@@ -137,8 +130,47 @@ export default function HomePage() {
           <Navbar />
           <Hero />
           <Features />
+          <HowItWorks />
           <Playground />
+          <DashboardShowcase />
+          <section
+            id="calculator"
+            aria-labelledby="calculator-heading"
+            className="border-t border-[#e5e5e0] py-16 sm:py-20 px-4 sm:px-6 scroll-mt-16"
+          >
+            <div className="mx-auto max-w-4xl">
+              <div className="mb-8 sm:mb-10">
+                <p className="mb-3 sm:mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[#757570]">
+                  Free tool
+                </p>
+                <h2
+                  id="calculator-heading"
+                  className="font-display text-3xl sm:text-4xl tracking-tight text-[#0a0a0a]"
+                >
+                  How much are delivery apps costing you?
+                </h2>
+                <p className="mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-[#6b6b6b]">
+                  Drag the sliders to match your business and see what you lose to commission every
+                  year — and what you&apos;d keep with MenuFast.
+                </p>
+              </div>
+              <CommissionCalculator />
+              <p className="mt-5 text-sm text-[#6b6b6b]">
+                <Link
+                  href="/commission-calculator"
+                  className="inline-flex items-center gap-1.5 font-medium text-[#0f6e56] hover:underline"
+                >
+                  Open the full calculator
+                  <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </p>
+            </div>
+          </section>
+          <Comparison />
+          <Testimonials />
           <Pricing />
+          <LeadCapture />
+          <FAQ />
           <FooterCTA />
         </PlaygroundProvider>
       </main>

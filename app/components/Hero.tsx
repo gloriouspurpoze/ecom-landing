@@ -1,185 +1,200 @@
 "use client";
 import { usePlayground, BusinessType } from "@/app/context/PlaygroundContext";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, BadgePercent } from "lucide-react";
 import { motion } from "framer-motion";
+import MockupFrame from "./MockupFrame";
+import FloatPhone from "./FloatPhone";
 
-const types: { id: BusinessType; label: string; emoji: string; desc: string }[] = [
-  { id: "restaurant", label: "Restaurant, Cafe or Cloud Kitchen", emoji: "🍽️", desc: "Dine-in & delivery menus" },
-  { id: "retail", label: "E-Commerce", emoji: "🛍️", desc: "Home Items, Fashion & lifestyle stores" },
-  { id: "homeservice", label: "Home Services", emoji: "🏠", desc: "Home Services like Plumbers, Electricians, etc." },
+const types: { id: BusinessType; label: string; emoji: string }[] = [
+  { id: "restaurant", label: "Restaurant", emoji: "🍽️" },
+  { id: "retail", label: "Retail", emoji: "🛍️" },
+  { id: "homeservice", label: "Home Services", emoji: "🏠" },
 ];
 
 export default function Hero() {
   const { businessType, setBusinessType } = usePlayground();
 
-  const handleSelect = (id: BusinessType) => {
-    setBusinessType(id);
-    setTimeout(() => {
-      document.getElementById("playground")?.scrollIntoView({ behavior: "smooth" });
-    }, 300);
-  };
-
   return (
     <section
       aria-label="Hero"
-      className="relative flex flex-col items-center justify-center px-4 sm:px-6 pt-24 sm:pt-28 pb-14 sm:pb-20 overflow-hidden min-h-[calc(100svh-0px)]"
+      className="relative overflow-hidden px-4 sm:px-6 pt-28 sm:pt-32 pb-16 sm:pb-20"
     >
-      {/* Subtle radial background grain */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(29,158,117,0.07),transparent)]"
-      />
+      {/* Modern mesh background */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_75%_-5%,rgba(29,158,117,0.12),transparent),radial-gradient(45%_40%_at_5%_20%,rgba(29,158,117,0.07),transparent)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,10,10,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,10,10,0.025)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000,transparent)]" />
+      </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto w-full text-center">
-        {/* Eyebrow badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-          className="inline-flex items-center gap-2 bg-[#e1f5ee] border border-[#1d9e75]/30 text-[#0f6e56] px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium uppercase tracking-wider mb-6 sm:mb-8"
-        >
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-[#1d9e75]" />
-          For home kitchens &amp; cloud kitchens
-        </motion.div>
-
-        {/* H1 — graduated size for all viewports */}
-        <motion.h1
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.1 }}
-          className="font-display text-[2.5rem] leading-[1.15] sm:text-5xl md:text-6xl tracking-tight text-[#0a0a0a] mb-5 sm:mb-6"
-        >
-          Your menu.
-          <br />
-          <em className="text-[#1d9e75] not-italic">Your customers.</em>
-          <br />
-          We simplify the rest.
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.2 }}
-          className="mx-auto max-w-xl text-base sm:text-lg font-light leading-7 sm:leading-8 text-[#6b6b6b] mb-8 sm:mb-10"
-        >
-          Stop losing 28% to Food Delivery apps. Get a beautiful digital menu, WhatsApp ordering,
-          and your own customer list — all in one place.
-        </motion.p>
-
-        {/* Business type selector */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.3 }}
-          className="max-w-2xl mx-auto mb-7 sm:mb-8"
-        >
-          <p className="text-[10px] sm:text-xs font-medium text-[#8d8d84] uppercase tracking-widest mb-3 sm:mb-4">
-            Choose your business type
-          </p>
-          <div
-            role="group"
-            aria-label="Business type selector"
-            className="grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-2.5 sm:gap-3"
+      <div className="mx-auto grid max-w-6xl grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        {/* LEFT — copy */}
+        <div className="text-center lg:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 bg-white border border-[#e5e5e0] shadow-sm text-[#0f6e56] px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-medium"
           >
-            {types.map((type) => {
-              const isSelected = businessType === type.id;
-              return (
-                <motion.button
-                  key={type.id}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={() => handleSelect(type.id)}
-                  aria-pressed={isSelected}
-                  aria-label={`Select ${type.label}`}
-                  className={`relative flex items-center xs:flex-col xs:items-start gap-3 xs:gap-0 p-3.5 sm:p-4 rounded-xl border text-left transition-all duration-300 ${
-                    isSelected
-                      ? "bg-white border-[#1d9e75] shadow-md"
-                      : "bg-white border-[#e5e5e0] hover:border-[#bfbfb8] hover:bg-[#fafaf8]"
-                  }`}
-                >
-                  {isSelected && (
-                    <motion.div
-                      layoutId="selector-glow"
-                      className="absolute inset-0 rounded-xl bg-[#e1f5ee]/40"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.55 }}
-                    />
-                  )}
-                  <div className="relative z-10 flex items-center xs:flex-col xs:items-start gap-3 xs:gap-0 w-full">
-                    <span aria-hidden="true" className="text-xl xs:text-2xl xs:mb-2 block shrink-0">{type.emoji}</span>
-                    <div>
-                      <span className={`font-semibold text-sm block ${isSelected ? "text-[#0a0a0a]" : "text-[#6b6b6b]"}`}>
-                        {type.label}
-                      </span>
-                      <span className="text-[11px] text-[#9a9a92] mt-0.5 block hidden xs:block">{type.desc}</span>
-                    </div>
-                  </div>
-                  {isSelected && (
-                    <div
-                      aria-hidden="true"
-                      className="absolute top-3 right-3 w-4 h-4 xs:w-5 xs:h-5 rounded-full bg-[#1d9e75] flex items-center justify-center"
+            <BadgePercent size={13} aria-hidden="true" className="text-[#1d9e75]" />
+            Zero commission · Keep 100% of every order
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="font-display text-[2.6rem] leading-[1.08] sm:text-5xl md:text-[3.5rem] tracking-tight text-[#0a0a0a] mt-5 sm:mt-6"
+          >
+            Your store.
+            <br />
+            <span className="text-[#1d9e75]">Your customers.</span>
+            <br />
+            We simplify the rest.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.16 }}
+            className="mx-auto lg:mx-0 max-w-xl text-base sm:text-lg leading-7 sm:leading-8 text-[#5a5a55] mt-5 sm:mt-6"
+          >
+            Stop losing 20–30% to delivery apps and marketplaces. Launch a beautiful online
+            store with WhatsApp ordering — for food, retail, or home services.
+          </motion.p>
+
+          {/* Segmented business-type selector */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.24 }}
+            className="mt-7 sm:mt-8"
+          >
+            <p className="text-[11px] font-medium text-[#757570] uppercase tracking-widest mb-3">
+              Preview your store →
+            </p>
+            <div
+              role="group"
+              aria-label="Business type selector"
+              className="inline-flex flex-wrap justify-center lg:justify-start gap-2 p-1.5 rounded-2xl bg-white border border-[#e5e5e0] shadow-sm"
+            >
+              {types.map((type) => {
+                const isSelected = businessType === type.id;
+                return (
+                  <button
+                    key={type.id}
+                    onClick={() => setBusinessType(type.id)}
+                    aria-pressed={isSelected}
+                    className="relative px-3.5 sm:px-4 py-2 rounded-xl text-sm font-medium transition-colors"
+                  >
+                    {isSelected && (
+                      <motion.span
+                        layoutId="hero-seg"
+                        className="absolute inset-0 rounded-xl bg-[#0a0a0a]"
+                        transition={{ type: "spring", bounce: 0.18, duration: 0.5 }}
+                      />
+                    )}
+                    <span
+                      className={`relative z-10 flex items-center gap-1.5 ${
+                        isSelected ? "text-white" : "text-[#6b6b6b]"
+                      }`}
                     >
-                      <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-white" />
-                    </div>
-                  )}
-                </motion.button>
-              );
-            })}
-          </div>
-        </motion.div>
+                      <span aria-hidden="true">{type.emoji}</span>
+                      {type.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </motion.div>
 
-        {/* CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.42 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3"
-        >
-          <a
-            href="#playground"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("playground")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="group w-full sm:w-auto rounded-md bg-[#0a0a0a] px-7 py-3.5 sm:py-3 text-sm font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.32 }}
+            className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3"
           >
-            See What your Menu could look like
-            <ArrowRight size={14} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="/zainabs-bakes"
-            className="w-full sm:w-auto rounded-md border border-[#e5e5e0] px-7 py-3.5 sm:py-3 text-sm text-[#0a0a0a] text-center transition hover:border-[#bfbfb8]"
+            <a
+              href="/signup"
+              className="group w-full sm:w-auto rounded-lg bg-[#0a0a0a] px-7 py-3.5 text-sm font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
+            >
+              Start free — it takes 2 minutes
+              <ArrowRight size={15} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="/zainabs-bakes"
+              className="w-full sm:w-auto rounded-lg border border-[#e5e5e0] bg-white px-7 py-3.5 text-sm font-medium text-[#0a0a0a] text-center transition hover:border-[#bfbfb8]"
+            >
+              See a live store
+            </a>
+          </motion.div>
+
+          {/* Trust line */}
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.42 }}
+            className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs sm:text-sm text-[#5a5a55]"
           >
-            See a live example
-          </a>
-        </motion.div>
+            {["45-day free trial", "No credit card", "Cancel anytime"].map((t) => (
+              <li key={t} className="flex items-center gap-1.5">
+                <Check size={14} aria-hidden="true" className="text-[#1d9e75]" />
+                {t}
+              </li>
+            ))}
+          </motion.ul>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.65, delay: 0.52 }}
-          className="mt-4 sm:mt-5 text-xs sm:text-sm text-[#9a9a92]"
-        >
-          45-day free trial · No credit card · Cancel anytime
-        </motion.p>
-
-        {/* Social proof strip */}
+        {/* RIGHT — live product preview */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.65, delay: 0.62 }}
-          aria-label="Trusted by"
-          className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm text-[#6b6b6b]"
+          initial={{ opacity: 0, scale: 0.94, y: 12 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative flex justify-center lg:justify-end"
         >
-          {["Home bakeries", "Tiffin services", "Cloud kitchens", "Health food startups"].map(
-            (entry, index, arr) => (
-              <div key={entry} className="flex items-center gap-4">
-                <span>{entry}</span>
-                {index < arr.length - 1 && (
-                  <span aria-hidden="true" className="h-1 w-1 rounded-full bg-[#d6d6cf]" />
-                )}
+          {/* Soft brand glow */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 m-auto h-[80%] w-[80%] rounded-full bg-[#1d9e75]/20 blur-[90px]"
+          />
+
+          <div className="relative">
+            <FloatPhone>
+              <MockupFrame />
+            </FloatPhone>
+
+            {/* Floating stat card — top left */}
+            <motion.div
+              initial={{ opacity: 0, x: -16, y: -8 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="hidden sm:flex absolute -left-6 top-10 items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5"
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e1f5ee] text-[#1d9e75]">
+                <BadgePercent size={16} />
+              </span>
+              <div className="text-left">
+                <p className="text-[11px] text-[#757570] leading-none">Commission</p>
+                <p className="text-sm font-bold text-[#0a0a0a] mt-1">₹0 · always</p>
               </div>
-            )
-          )}
+            </motion.div>
+
+            {/* Floating order notification — bottom right */}
+            <motion.div
+              initial={{ opacity: 0, x: 16, y: 8 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.78 }}
+              className="hidden sm:flex absolute -right-5 bottom-16 items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-[#1d9e75] opacity-60 animate-ping" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#1d9e75]" />
+              </span>
+              <div className="text-left">
+                <p className="text-[11px] text-[#757570] leading-none">New order on WhatsApp</p>
+                <p className="text-sm font-bold text-[#0a0a0a] mt-1">+ ₹420</p>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

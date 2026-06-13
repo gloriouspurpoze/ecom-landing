@@ -17,7 +17,7 @@ const PlaygroundContext = createContext<PlaygroundState | undefined>(undefined);
 export const PlaygroundProvider = ({ children }: { children: React.ReactNode }) => {
   const [businessType, setBusinessType] = useState<BusinessType>("restaurant");
   const [brandName, setBrandName] = useState("");
-  const [primaryColor, setPrimaryColor] = useState("#FF5A1F");
+  const [primaryColor, setPrimaryColor] = useState("#1d9e75");
 
   return (
     <PlaygroundContext.Provider value={{ businessType, brandName, primaryColor, setBusinessType, setBrandName, setPrimaryColor }}>

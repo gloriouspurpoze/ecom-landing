@@ -6,6 +6,11 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --mf-text-muted: #6b6b6b;
+    --mf-text-subtle: #757570;
+    --mf-bg: #fafaf8;
+    --mf-bg-alt: #ffffff;
+    --mf-border: #e5e5e0;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -130,5 +135,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float {
+      animation: none !important;
+    }
   }
 }

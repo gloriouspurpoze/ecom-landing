@@ -25,24 +25,27 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://menufast.in"),
   title: {
-    default: "MenuFast — Commission-Free Digital Storefront for Indian Businesses",
+    default:
+      "MenuFast — Zero-Commission Online Store for Restaurants, Retail & Services",
     template: "%s | MenuFast",
   },
   description:
-    "Launch your branded online store in 2 minutes. Zero commission. WhatsApp ordering. Own your customer data. Built for Indian restaurants, home kitchens, home service providers, retail & grocery businesses.",
+    "Launch your branded online store in 2 minutes. Zero commission, WhatsApp ordering, and your own customer data. For restaurants, retail shops, and home service providers across India.",
   keywords: [
     "digital menu India",
-    "online ordering system India",
+    "online food ordering system India",
     "commission-free restaurant ordering",
     "WhatsApp food ordering",
     "home kitchen online store",
     "cloud kitchen app India",
-    "restaurant app without Food Delivery app commission",
+    "restaurant app without delivery commission",
     "food ordering app India",
+    "QR code menu India",
     "menu builder India",
     "zero commission food delivery",
     "restaurant SaaS India",
-    "independent online store India",
+    "tiffin service ordering app",
+    "home bakery online store India",
   ],
   authors: [{ name: "MenuFast", url: "https://menufast.in" }],
   creator: "MenuFast",
@@ -64,25 +67,15 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://menufast.in",
     siteName: "MenuFast",
-    title: "MenuFast — Zero Commission Online Ordering for Local Businesses",
+    title: "MenuFast — Zero-Commission Online Ordering for Food Businesses",
     description:
-      "Stop paying 20–30% to Food Delivery apps. Build your own branded store, receive orders on WhatsApp, and keep 100% of your profits.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "MenuFast — Commission-Free Digital Storefront for Indian Businesses",
-        type: "image/png",
-      },
-    ],
+      "Stop paying 20–30% to delivery apps. Build your own branded food store, receive orders on WhatsApp, and keep 100% of your profits.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MenuFast — Zero Commission Online Ordering",
+    title: "MenuFast — Zero-Commission Online Ordering",
     description:
-      "Stop paying 20–30% to Food Delivery apps. Build your own branded store in 2 minutes. Keep 100% of profits.",
-    images: ["/og-image.png"],
+      "Stop paying 20–30% to delivery apps. Build your own branded food store in 2 minutes. Keep 100% of profits.",
   },
   alternates: {
     canonical: "https://menufast.in",
