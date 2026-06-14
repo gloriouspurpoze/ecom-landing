@@ -92,12 +92,12 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Link
+          {/* <Link
             href="/login"
             className="text-sm text-[#6b6b6b] hover:text-[#0a0a0a] transition-colors px-3 py-2"
           >
             Sign in
-          </Link>
+          </Link> */}
           <Link
             href="/signup"
             className="rounded-md bg-[#0a0a0a] px-4 py-2 text-xs font-medium text-white transition hover:opacity-90"
@@ -144,14 +144,14 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="pt-3 border-t border-[#e5e5e0] flex flex-col gap-2">
-                <Link
+                {/* <Link
                   href="/login"
                   role="menuitem"
                   className="flex items-center justify-center text-sm text-[#6b6b6b] hover:text-[#0a0a0a] hover:bg-[#f0f0ec] rounded-lg px-3 py-3 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   Sign in
-                </Link>
+                </Link> */}
                 <Link
                   href="/signup"
                   role="menuitem"

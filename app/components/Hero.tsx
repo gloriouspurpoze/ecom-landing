@@ -1,8 +1,9 @@
 "use client";
+import { useState } from "react";
 import { usePlayground, BusinessType } from "@/app/context/PlaygroundContext";
-import { ArrowRight, Check, BadgePercent } from "lucide-react";
-import { motion } from "framer-motion";
-import MockupFrame from "./MockupFrame";
+import { ArrowRight, Check, BadgePercent, Monitor, Smartphone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import MockupFrame, { type ViewportVariant } from "./MockupFrame";
 import FloatPhone from "./FloatPhone";
 
 const types: { id: BusinessType; label: string; emoji: string }[] = [
@@ -11,8 +12,14 @@ const types: { id: BusinessType; label: string; emoji: string }[] = [
   { id: "homeservice", label: "Home Services", emoji: "🏠" },
 ];
 
+const viewportOptions: { id: ViewportVariant; label: string; icon: typeof Monitor }[] = [
+  { id: "desktop", label: "Desktop", icon: Monitor },
+  { id: "mobile", label: "Mobile", icon: Smartphone },
+];
+
 export default function Hero() {
   const { businessType, setBusinessType } = usePlayground();
+  const [viewport, setViewport] = useState<ViewportVariant>("mobile");
 
   return (
     <section
@@ -25,9 +32,9 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,10,10,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,10,10,0.025)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000,transparent)]" />
       </div>
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-        {/* LEFT — copy */}
-        <div className="text-center lg:text-left">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 lg:grid-cols-2 lg:grid-rows-[auto_auto] gap-10 lg:gap-12 items-center">
+        {/* Intro copy — first on all breakpoints */}
+        <div className="order-1 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,13 +67,116 @@ export default function Hero() {
             Stop losing 20–30% to delivery apps and marketplaces. Launch a beautiful online
             store with WhatsApp ordering — for food, retail, or home services.
           </motion.p>
+        </div>
 
-          {/* Segmented business-type selector */}
+        {/* Live product preview — before store toggles on mobile, right column on desktop */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.94, y: 12 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="order-2 relative flex justify-center lg:justify-end lg:col-start-2 lg:row-start-1 lg:row-span-2"
+        >
+          {/* Soft brand glow */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 m-auto h-[80%] w-[80%] rounded-full bg-[#1d9e75]/20 blur-[90px]"
+          />
+
+          <div className="relative flex flex-col items-center">
+            <FloatPhone>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={viewport}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <MockupFrame variant={viewport} />
+                </motion.div>
+              </AnimatePresence>
+            </FloatPhone>
+
+            <div
+              role="group"
+              aria-label="Preview viewport"
+              className="mt-4 inline-flex gap-1 p-1 rounded-full bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-sm"
+            >
+              {viewportOptions.map((option) => {
+                const isSelected = viewport === option.id;
+                const Icon = option.icon;
+                return (
+                  <button
+                    key={option.id}
+                    onClick={() => setViewport(option.id)}
+                    aria-pressed={isSelected}
+                    className="relative px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
+                  >
+                    {isSelected && (
+                      <motion.span
+                        layoutId="hero-viewport"
+                        className="absolute inset-0 rounded-full bg-[#0a0a0a]"
+                        transition={{ type: "spring", bounce: 0.18, duration: 0.5 }}
+                      />
+                    )}
+                    <span
+                      className={`relative z-10 flex items-center gap-1.5 ${
+                        isSelected ? "text-white" : "text-[#6b6b6b]"
+                      }`}
+                    >
+                      <Icon size={13} aria-hidden="true" />
+                      {option.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Floating stat card — top left */}
+            <motion.div
+              initial={{ opacity: 0, x: -16, y: -8 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className={`hidden sm:flex absolute items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5 ${
+                viewport === "desktop" ? "-left-4 top-6" : "-left-6 top-10"
+              }`}
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e1f5ee] text-[#1d9e75]">
+                <BadgePercent size={16} />
+              </span>
+              <div className="text-left">
+                <p className="text-[11px] text-[#757570] leading-none">Commission</p>
+                <p className="text-sm font-bold text-[#0a0a0a] mt-1">₹0 · always</p>
+              </div>
+            </motion.div>
+
+            {/* Floating order notification — bottom right */}
+            <motion.div
+              initial={{ opacity: 0, x: 16, y: 8 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.78 }}
+              className={`hidden sm:flex absolute items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5 ${
+                viewport === "desktop" ? "-right-4 bottom-24" : "-right-5 bottom-16"
+              }`}
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-[#1d9e75] opacity-60 animate-ping" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#1d9e75]" />
+              </span>
+              <div className="text-left">
+                <p className="text-[11px] text-[#757570] leading-none">New order on WhatsApp</p>
+                <p className="text-sm font-bold text-[#0a0a0a] mt-1">+ ₹420</p>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Store selector, CTAs, trust — after preview on mobile */}
+        <div className="order-3 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.24 }}
-            className="mt-7 sm:mt-8"
           >
             <p className="text-[11px] font-medium text-[#757570] uppercase tracking-widest mb-3">
               Preview your store →
@@ -106,7 +216,6 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,7 +237,6 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Trust line */}
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -143,59 +251,6 @@ export default function Hero() {
             ))}
           </motion.ul>
         </div>
-
-        {/* RIGHT — live product preview */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94, y: 12 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative flex justify-center lg:justify-end"
-        >
-          {/* Soft brand glow */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 m-auto h-[80%] w-[80%] rounded-full bg-[#1d9e75]/20 blur-[90px]"
-          />
-
-          <div className="relative">
-            <FloatPhone>
-              <MockupFrame />
-            </FloatPhone>
-
-            {/* Floating stat card — top left */}
-            <motion.div
-              initial={{ opacity: 0, x: -16, y: -8 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="hidden sm:flex absolute -left-6 top-10 items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5"
-            >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e1f5ee] text-[#1d9e75]">
-                <BadgePercent size={16} />
-              </span>
-              <div className="text-left">
-                <p className="text-[11px] text-[#757570] leading-none">Commission</p>
-                <p className="text-sm font-bold text-[#0a0a0a] mt-1">₹0 · always</p>
-              </div>
-            </motion.div>
-
-            {/* Floating order notification — bottom right */}
-            <motion.div
-              initial={{ opacity: 0, x: 16, y: 8 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.78 }}
-              className="hidden sm:flex absolute -right-5 bottom-16 items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5"
-            >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-[#1d9e75] opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#1d9e75]" />
-              </span>
-              <div className="text-left">
-                <p className="text-[11px] text-[#757570] leading-none">New order on WhatsApp</p>
-                <p className="text-sm font-bold text-[#0a0a0a] mt-1">+ ₹420</p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

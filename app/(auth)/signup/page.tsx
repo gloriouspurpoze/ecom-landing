@@ -13,10 +13,10 @@ const PLAN_LABELS: Record<string, string> = {
 
 const BUSINESS_TYPE_OPTIONS = [
   { value: "", label: "Select your business type" },
-  { value: "Restaurant, Cafe or Cloud Kitchen", label: "🍽️  Restaurant, Cafe or Cloud Kitchen" },
-  { value: "E-Commerce", label: "🛍️  E-Commerce (Home Items, Fashion & Lifestyle)" },
-  { value: "Home Services", label: "🏠  Home Services (Plumber, Electrician, etc.)" },
-  { value: "Other", label: "✏️  Other" },
+  { value: "Restaurant, Cafe or Cloud Kitchen", label: "Restaurant, Cafe or Cloud Kitchen" },
+  { value: "E-Commerce", label: "E-Commerce (Home Items, Fashion & Lifestyle)" },
+  { value: "Home Services", label: "Home Services (Plumber, Electrician, etc.)" },
+  { value: "Other", label: "Other" },
 ];
 
 const BUSINESS_TYPE_URL_MAP: Record<string, string> = {
@@ -90,16 +90,16 @@ function SignupContent() {
     placeholder: string;
     required?: boolean;
   }[] = [
-    { name: "business_name", label: "Kitchen / Business Name", placeholder: "Ria Bakes" },
-    { name: "owner_name", label: "Your Name", placeholder: "Ria Arora" },
-    { name: "email", label: "Email", type: "email", placeholder: "you@example.com" },
+    { name: "business_name", label: "Business Name", placeholder: "Enter your business name" },
+    { name: "owner_name", label: "Your Name", placeholder: "Enter your name" },
+    { name: "email", label: "Email", type: "email", placeholder: "Enter your email" },
     {
       name: "whatsapp_number",
       label: "WhatsApp Number",
       type: "tel",
-      placeholder: "919876543210",
+      placeholder: "Enter your WhatsApp number",
     },
-    { name: "city", label: "City", placeholder: "Mumbai", required: false },
+    { name: "city", label: "City", placeholder: "Enter your city", required: false },
   ];
 
   if (submitted) {
@@ -272,16 +272,16 @@ function SignupContent() {
             disabled={loading}
             className="w-full bg-slate-900 text-white py-2.5 rounded-lg font-semibold text-sm hover:bg-slate-700 transition disabled:opacity-50 mt-2"
           >
-            {loading ? "Sending your enquiry…" : "Book My Walkthrough Call"}
+            {loading ? "Sending your enquiry…" : "Submit Enquiry"}
           </button>
         </form>
 
-        <p className="text-center text-sm text-slate-500 mt-6">
+        {/* <p className="text-center text-sm text-slate-500 mt-6">
           Already have an account?{" "}
           <Link href="/login" className="text-slate-900 font-semibold hover:underline">
             Log in
           </Link>
-        </p>
+        </p> */}
       </div>
     </main>
   );
