@@ -23,7 +23,7 @@ export default function RefundPage() {
 
       <h2>Paid plans &amp; free trial</h2>
       <ul>
-        <li>Growth (₹549/month) and Premium (₹999/month) include a 28-day free trial.</li>
+        <li>Growth (₹499/month) and Premium (₹999/month) include a 28-day free trial.</li>
         <li>No credit card is required to start the trial.</li>
         <li>
           After the trial, your chosen plan is billed monthly unless you cancel before the trial ends.

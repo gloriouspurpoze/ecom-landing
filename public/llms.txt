@@ -25,7 +25,7 @@ Built in Mumbai, India. Site: https://torqorbit.in
 ## Pricing (INR, monthly)
 
 - Free: ₹0 forever — unlimited items, WhatsApp alerts, QR code, 2 templates, menu management
-- Growth: ₹549/month — payments, order dashboard, WhatsApp status updates (28-day free trial)
+- Growth: ₹499/month — payments, order dashboard, WhatsApp status updates (28-day free trial)
 - Premium: ₹999/month — full branding, logo, custom domain, loyalty, analytics (28-day free trial)
 
 ## Key pages

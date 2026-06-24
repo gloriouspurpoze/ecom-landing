@@ -24,7 +24,7 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "₹549",
+    price: "₹499",
     period: "/month",
     trialNote: "28-day free trial · No card to start",
     description: "Accept payments and track sales from one dashboard.",

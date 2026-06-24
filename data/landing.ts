@@ -7,12 +7,12 @@
 
 export const SITE = {
   name: "Torq Orbit",
-  url: "https://torqorbit.in",
+  url: "https://orbit.torqstudio.com/",
   tagline: "Zero-commission online ordering for Indian local businesses",
 } as const;
 
 export const CONTACT = {
-  email: "hello@torqorbit.in",
+  email: "connect@torqstudio.com",
   whatsapp: "917977148243",
   whatsappDisplay: "+91 79771 48243",
   address: "Mumbai, Maharashtra, India",

@@ -69,7 +69,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Growth Plan",
-          price: "549",
+          price: "499",
           priceCurrency: "INR",
           description:
             "Everything in Free, plus online payments, orders & sales dashboard, and WhatsApp status updates to customers. 28-day free trial.",

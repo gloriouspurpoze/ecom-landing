@@ -7,7 +7,7 @@ import axios from "axios";
 
 const PLAN_LABELS: Record<string, string> = {
   free: "Free — ₹0 / forever",
-  growth: "Growth — ₹549 / month",
+  growth: "Growth — ₹499 / month",
   premium: "Premium — ₹999 / month",
 };
 
