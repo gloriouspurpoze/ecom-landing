@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "media.menufast.in" },
+      { protocol: "https", hostname: "media.torqorbit.in" },
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "plus.unsplash.com" },
     ],

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "MenuFast — Zero-commission online ordering for restaurants and home kitchens";
+  "Torq Orbit — Zero-commission online ordering for restaurants and home kitchens";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -104,7 +104,7 @@ export default function OpengraphImage() {
             Restaurants · Cloud kitchens · Home bakers · Tiffin services
           </div>
           <div style={{ display: "flex", fontSize: 24, fontWeight: 600, color: "#0a0a0a" }}>
-            menufast.in
+            torqorbit.in
           </div>
         </div>
       </div>

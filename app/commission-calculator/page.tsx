@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "restaurant commission calculator",
   ],
   openGraph: {
-    title: "Delivery-App Commission Calculator — MenuFast",
+    title: "Delivery-App Commission Calculator — Torq Orbit",
     description:
       "See exactly how much your restaurant loses to delivery-app commission each year.",
     url: `${SITE.url}/commission-calculator`,
@@ -44,7 +44,7 @@ export default function CommissionCalculatorPage() {
       <header className="border-b border-[#e5e5e0] bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 sm:px-6 py-5">
           <Link href="/" className="font-display text-xl tracking-tight text-[#0a0a0a]">
-            menu<span className="text-[#1d9e75]">fast</span>
+            Torq<span className="text-[#1d9e75]"> Orbit</span>
           </Link>
           <Link href="/" className="text-sm text-[#6b6b6b] hover:text-[#0a0a0a] transition-colors">
             ← Back to home
@@ -81,7 +81,7 @@ export default function CommissionCalculatorPage() {
           <p>
             You can&apos;t usually negotiate aggregator commission to zero, but you can move your{" "}
             <strong>repeat customers</strong> to a direct, commission-free channel like a{" "}
-            <Link href="/">MenuFast store</Link> with WhatsApp ordering. Keep delivery apps for
+            <Link href="/">Torq Orbit store</Link> with WhatsApp ordering. Keep delivery apps for
             discovery, and take loyal customers direct to protect your margin. Read more in our
             guide on{" "}
             <Link href="/blog/swiggy-zomato-commission-charges-explained">

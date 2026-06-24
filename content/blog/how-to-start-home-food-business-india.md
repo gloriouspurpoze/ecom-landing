@@ -2,7 +2,7 @@
 title: "How to Start a Home Food Business in India: The Complete 2026 Checklist"
 description: "Everything you need to start selling home-cooked food online in India — FSSAI registration, pricing, taking orders, and getting your first customers."
 date: "2026-06-05"
-author: "MenuFast Team"
+author: "Torq Orbit Team"
 category: "Guides"
 funnel: "TOFU"
 keywords:
@@ -46,7 +46,7 @@ Instead, set up a **digital menu with WhatsApp ordering**:
 - They tap to send a structured order to your WhatsApp.
 - You confirm and cook — no commission, no middleman.
 
-You can set this up free in a couple of minutes with [MenuFast](/) — no website or tech skills needed.
+You can set this up free in a couple of minutes with [Torq Orbit](/) — no website or tech skills needed.
 
 ## 5. Get your first customers
 

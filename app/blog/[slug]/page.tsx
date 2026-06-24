@@ -91,7 +91,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <header className="border-b border-[#e5e5e0] bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 sm:px-6 py-5">
           <Link href="/" className="font-display text-xl tracking-tight text-[#0a0a0a]">
-            menu<span className="text-[#1d9e75]">fast</span>
+            Torq<span className="text-[#1d9e75]"> Orbit</span>
           </Link>
           <Link href="/blog" className="text-sm text-[#6b6b6b] hover:text-[#0a0a0a] transition-colors">
             ← All articles

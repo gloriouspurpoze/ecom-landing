@@ -86,7 +86,7 @@ export default function CommissionCalculator() {
 
         <div className="relative mt-8 rounded-xl bg-[#1d9e75]/15 border border-[#1d9e75]/30 p-4">
           <p className="text-sm text-[#7fe6c1]">
-            With MenuFast, your commission is{" "}
+            With Torq Orbit, your commission is{" "}
             <span className="font-bold text-white">₹0</span>. Move even half your regulars direct
             and keep{" "}
             <span className="font-bold text-white">{formatINR(yearlyLoss / 2)}</span>/year.

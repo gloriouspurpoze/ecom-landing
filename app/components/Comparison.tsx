@@ -2,15 +2,15 @@
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 
-const rows: { label: string; menufast: string; apps: string }[] = [
-  { label: "Commission per order", menufast: "₹0 — always", apps: "20–30% of every order" },
-  { label: "Who owns your customers", menufast: "You do", apps: "The platform hides them" },
-  { label: "Your branding", menufast: "Your logo, colours & name", apps: "Listed beside competitors" },
-  { label: "Setup time", menufast: "Under 2 minutes", apps: "Paperwork & onboarding delays" },
-  { label: "WhatsApp ordering", menufast: "Built-in", apps: "Not available" },
-  { label: "Menu & price control", menufast: "Real-time, any device", apps: "Restricted & slow" },
-  { label: "Payouts", menufast: "Direct to your account", apps: "Delayed settlement cycles" },
-  { label: "Monthly cost", menufast: "From ₹0", apps: "“Free” — but takes a cut of all sales" },
+const rows: { label: string; torqOrbit: string; apps: string }[] = [
+  { label: "Commission per order", torqOrbit: "₹0 — always", apps: "20–30% of every order" },
+  { label: "Who owns your customers", torqOrbit: "You do", apps: "The platform hides them" },
+  { label: "Your branding", torqOrbit: "Your logo, colours & name", apps: "Listed beside competitors" },
+  { label: "Setup time", torqOrbit: "Under 30 minutes", apps: "Paperwork & onboarding delays" },
+  { label: "WhatsApp ordering", torqOrbit: "Built-in", apps: "Not available" },
+  { label: "Menu & price control", torqOrbit: "Real-time, any device", apps: "Restricted & slow" },
+  { label: "Payouts", torqOrbit: "Direct to your account", apps: "Delayed settlement cycles" },
+  { label: "Monthly cost", torqOrbit: "Fixed monthly subscription fee (probably less than cost of your 3 average orders)", apps: "“Free” — but takes a cut of all sales" },
 ];
 
 export default function Comparison() {
@@ -29,7 +29,7 @@ export default function Comparison() {
             transition={{ duration: 0.55 }}
           >
             <p className="mb-3 sm:mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[#757570]">
-              MenuFast vs delivery apps
+              Torq Orbit vs delivery apps
             </p>
             <h2
               id="comparison-heading"
@@ -56,7 +56,7 @@ export default function Comparison() {
               What matters
             </div>
             <div className="p-3 sm:p-5 text-center text-[11px] sm:text-sm font-semibold text-[#0a0a0a] bg-[#e1f5ee]">
-              menu<span className="text-[#1d9e75]">fast</span>
+              Torq<span className="text-[#1d9e75]"> Orbit</span>
             </div>
             <div className="p-3 sm:p-5 text-center text-[11px] sm:text-sm font-medium text-[#9a9a92]">
               Delivery apps
@@ -75,7 +75,7 @@ export default function Comparison() {
               </div>
               <div className="p-3 sm:p-5 bg-[#e1f5ee]/40 flex items-start sm:items-center gap-1.5">
                 <Check size={14} aria-hidden="true" className="mt-0.5 sm:mt-0 text-[#1d9e75] shrink-0" />
-                <span className="text-xs sm:text-sm text-[#0a0a0a]">{row.menufast}</span>
+                <span className="text-xs sm:text-sm text-[#0a0a0a]">{row.torqOrbit}</span>
               </div>
               <div className="p-3 sm:p-5 flex items-start sm:items-center gap-1.5">
                 <X size={14} aria-hidden="true" className="mt-0.5 sm:mt-0 text-red-400 shrink-0" />

@@ -35,7 +35,7 @@ export default function Testimonials() {
               id="reviews-heading"
               className="font-display text-3xl sm:text-4xl tracking-tight text-[#0a0a0a]"
             >
-              See how local businesses use MenuFast.
+              See how local businesses use Torq Orbit.
             </h2>
             <p className="mt-3 max-w-xl text-sm sm:text-base text-[#6b6b6b]">
               Real example menus plus common use cases — no fabricated reviews.

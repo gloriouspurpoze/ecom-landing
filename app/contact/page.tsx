@@ -15,7 +15,7 @@ export default function ContactPage() {
       <header className="border-b border-[#e5e5e0] bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 sm:px-6 py-5">
           <Link href="/" className="font-display text-xl tracking-tight text-[#0a0a0a]">
-            menu<span className="text-[#1d9e75]">fast</span>
+            Torq<span className="text-[#1d9e75]"> Orbit</span>
           </Link>
           <Link href="/" className="text-sm text-[#6b6b6b] hover:text-[#0a0a0a] transition-colors">
             ← Back to home
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           <a
-            href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent("Hi MenuFast team, I have a question about...")}`}
+            href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent("Hi Torq Orbit team, I have a question about...")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex gap-4 rounded-xl border border-[#e5e5e0] bg-white p-5 hover:border-[#1d9e75] transition-colors"

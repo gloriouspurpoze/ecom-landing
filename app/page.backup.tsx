@@ -128,7 +128,7 @@ export default function HomePage() {
               <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#28ca41]" />
               <span className="ml-2 rounded border border-[#e5e5e0] bg-white px-3 py-1 text-xs text-[#6b6b6b]">
-                menufast.in/{data.liveDemo.slug}
+                torqorbit.in/{data.liveDemo.slug}
               </span>
             </div>
             <div className="bg-white p-6">

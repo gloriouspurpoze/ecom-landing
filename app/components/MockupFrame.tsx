@@ -136,8 +136,8 @@ function StoreMeta({
   meta: VerticalContent["meta"];
   size?: "sm" | "md";
 }) {
-  const iconSize = size === "md" ? 10 : 8;
-  const textClass = size === "md" ? "text-[10px]" : "text-[8px] sm:text-[9px]";
+  const iconSize = size === "md" ? 12 : 8;
+  const textClass = size === "md" ? "text-xs" : "text-[8px] sm:text-[9px]";
 
   return (
     <div className={`flex items-center gap-3 mb-2.5 sm:mb-3 text-gray-500 ${textClass}`}>
@@ -173,7 +173,7 @@ function CartBar({
       <motion.div
         style={{ backgroundColor: primaryColor }}
         className={`w-full rounded-xl text-center text-white font-black shadow-md ${
-          compact ? "py-2 sm:py-2.5 text-[9px] sm:text-[10px]" : "py-2.5 text-[11px]"
+          compact ? "py-2 sm:py-2.5 text-[9px] sm:text-[10px]" : "py-3 text-xs lg:text-sm"
         }`}
         animate={{ backgroundColor: primaryColor }}
         transition={{ duration: 0.3 }}
@@ -182,7 +182,7 @@ function CartBar({
       </motion.div>
       <p
         className={`mt-1.5 text-center text-gray-400 ${
-          compact ? "text-[7px] sm:text-[8px]" : "text-[9px]"
+          compact ? "text-[7px] sm:text-[8px]" : "text-[10px] lg:text-xs"
         }`}
       >
         Order sent to WhatsApp · no app to install
@@ -195,7 +195,7 @@ export default function MockupFrame({ variant = "mobile" }: { variant?: Viewport
   const { businessType, brandName, primaryColor } = usePlayground();
   const content = verticalData[businessType];
   const displayName = brandName.trim() || "Your Storefront";
-  const storeUrl = `menufast.in/${toSlug(brandName)}`;
+  const storeUrl = `${toSlug(brandName)}.torqorbit.in`;
 
   const glowRadius = variant === "desktop" ? "rounded-2xl" : "rounded-[50px]";
 
@@ -209,30 +209,30 @@ export default function MockupFrame({ variant = "mobile" }: { variant?: Viewport
 
       {variant === "desktop" ? (
         <div
-          className="relative w-full max-w-[500px] sm:max-w-[580px] lg:max-w-[640px] rounded-xl border border-[#d1d1ca] bg-[#e5e5e0] shadow-2xl overflow-hidden"
-          style={{ aspectRatio: "16/10" }}
+          className="relative w-full rounded-xl border border-[#d1d1ca] bg-[#e5e5e0] shadow-2xl overflow-hidden"
+          style={{ aspectRatio: "16/12" }}
           role="img"
           aria-label={`Live preview of the ${displayName} web store, open in a desktop browser`}
         >
           <div className="flex h-full flex-col bg-white overflow-hidden">
-            <div className="shrink-0 flex items-center gap-2 border-b border-gray-200 bg-[#f1f1ee] px-3 py-2">
-              <span className="h-2 w-2 rounded-full bg-[#ff5f57]" aria-hidden="true" />
-              <span className="h-2 w-2 rounded-full bg-[#febc2e]" aria-hidden="true" />
-              <span className="h-2 w-2 rounded-full bg-[#28c840]" aria-hidden="true" />
-              <div className="ml-2 flex flex-1 items-center gap-1.5 rounded-md bg-white px-2.5 py-1 shadow-sm">
-                <Lock size={9} className="text-gray-400 shrink-0" aria-hidden="true" />
-                <span className="text-[10px] text-gray-500 truncate">{storeUrl}</span>
+            <div className="shrink-0 flex items-center gap-2.5 border-b border-gray-200 bg-[#f1f1ee] px-4 py-2.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" aria-hidden="true" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" aria-hidden="true" />
+              <div className="ml-2 flex flex-1 items-center gap-2 rounded-md bg-white px-3 py-1.5 shadow-sm">
+                <Lock size={11} className="text-gray-400 shrink-0" aria-hidden="true" />
+                <span className="text-xs text-gray-500 truncate">{storeUrl}</span>
               </div>
             </div>
 
-            <div className="px-4 py-2.5 flex items-center justify-between border-b border-gray-100 shrink-0">
-              <span className="font-black text-sm text-gray-900 truncate max-w-[180px]">
+            <div className="px-5 py-3 flex items-center justify-between border-b border-gray-100 shrink-0">
+              <span className="font-black text-base lg:text-lg text-gray-900 truncate max-w-[220px]">
                 {displayName}
               </span>
               <div className="relative">
-                <ShoppingCart size={16} className="text-gray-700" />
+                <ShoppingCart size={18} className="text-gray-700" />
                 <span
-                  className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full text-white text-[8px] font-bold flex items-center justify-center"
+                  className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full text-white text-[9px] font-bold flex items-center justify-center"
                   style={{ backgroundColor: primaryColor }}
                 >
                   2
@@ -240,10 +240,10 @@ export default function MockupFrame({ variant = "mobile" }: { variant?: Viewport
               </div>
             </div>
 
-            <div className="px-4 py-2 shrink-0">
-              <div className="flex items-center gap-2 bg-gray-100 rounded-xl px-3 py-2 max-w-xs">
-                <Search size={12} className="text-gray-400 shrink-0" />
-                <span className="text-[11px] text-gray-400">{content.searchPlaceholder}</span>
+            <div className="px-5 py-2.5 shrink-0">
+              <div className="flex items-center gap-2 bg-gray-100 rounded-xl px-3.5 py-2.5 max-w-sm">
+                <Search size={14} className="text-gray-400 shrink-0" />
+                <span className="text-xs lg:text-sm text-gray-400">{content.searchPlaceholder}</span>
               </div>
             </div>
 
@@ -254,21 +254,21 @@ export default function MockupFrame({ variant = "mobile" }: { variant?: Viewport
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -16 }}
                 transition={{ duration: 0.28 }}
-                className="flex-1 overflow-y-auto px-4 pb-3 scrollbar-none"
+                className="flex-1 overflow-y-auto px-5 pb-4 scrollbar-none"
               >
-                <div className="relative h-28 sm:h-32 rounded-xl overflow-hidden mb-3 bg-gray-100">
+                <div className="relative h-32 lg:h-36 xl:h-40 rounded-xl overflow-hidden mb-4 bg-gray-100">
                   <Image
                     src={content.heroImg}
                     alt={content.category}
                     fill
-                    sizes="520px"
+                    sizes="(min-width: 1280px) 680px, (min-width: 1024px) 560px, 520px"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-2 left-3 right-3 flex items-end justify-between">
-                    <span className="text-white text-sm font-black">{content.category}</span>
+                  <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+                    <span className="text-white text-base lg:text-lg font-black">{content.category}</span>
                     <span
-                      className="text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm"
+                      className="text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm"
                       style={{ backgroundColor: `${primaryColor}cc` }}
                     >
                       {content.badge}
@@ -278,33 +278,33 @@ export default function MockupFrame({ variant = "mobile" }: { variant?: Viewport
 
                 <StoreMeta meta={content.meta} size="md" />
 
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2.5 lg:gap-3">
                   {content.items.map((item) => (
                     <div
                       key={item.name}
                       className="flex flex-col rounded-xl border border-gray-100 bg-white overflow-hidden"
                     >
-                      <div className="relative h-16 sm:h-[72px] bg-gray-100">
+                      <div className="relative h-[72px] lg:h-20 xl:h-[88px] bg-gray-100">
                         <Image
                           src={item.img}
                           alt={item.name}
                           fill
-                          sizes="160px"
+                          sizes="200px"
                           className="object-cover"
                         />
                       </div>
-                      <div className="p-2 flex flex-col flex-1">
-                        <p className="font-bold text-[10px] text-gray-900 truncate">{item.name}</p>
-                        <p className="text-[8px] text-gray-400 truncate mt-0.5">{item.desc}</p>
-                        <div className="mt-auto pt-1.5 flex items-center justify-between gap-1">
-                          <p className="font-black text-[10px] text-gray-900">{item.price}</p>
+                      <div className="p-2.5 flex flex-col flex-1">
+                        <p className="font-bold text-xs text-gray-900 truncate">{item.name}</p>
+                        <p className="text-[10px] lg:text-xs text-gray-400 truncate mt-0.5">{item.desc}</p>
+                        <div className="mt-auto pt-2 flex items-center justify-between gap-1">
+                          <p className="font-black text-xs text-gray-900">{item.price}</p>
                           <motion.button
                             whileTap={{ scale: 0.88 }}
                             style={{ backgroundColor: primaryColor }}
                             aria-label={`Add ${item.name}`}
-                            className="w-5 h-5 rounded-md flex items-center justify-center shrink-0 shadow-sm"
+                            className="w-6 h-6 rounded-md flex items-center justify-center shrink-0 shadow-sm"
                           >
-                            <Plus size={10} className="text-white" />
+                            <Plus size={12} className="text-white" />
                           </motion.button>
                         </div>
                       </div>

@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "MenuFast — Zero-Commission Online Ordering",
-    short_name: "MenuFast",
+    name: "Torq Orbit — Zero-Commission Online Ordering",
+    short_name: "Torq Orbit",
     description:
       "Launch your branded online store in minutes. Zero commission, WhatsApp ordering, and your own customer data.",
     id: "/",

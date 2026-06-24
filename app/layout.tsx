@@ -23,11 +23,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://menufast.in"),
+  metadataBase: new URL("https://torqorbit.in"),
   title: {
     default:
-      "MenuFast — Zero-Commission Online Store for Restaurants, Retail & Services",
-    template: "%s | MenuFast",
+      "Torq Orbit — Zero-Commission Online Store for Restaurants, Retail & Services",
+    template: "%s | Torq Orbit",
   },
   description:
     "Launch your branded online store in 2 minutes. Zero commission, WhatsApp ordering, and your own customer data. For restaurants, retail shops, and home service providers across India.",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     "tiffin service ordering app",
     "home bakery online store India",
   ],
-  authors: [{ name: "MenuFast", url: "https://menufast.in" }],
-  creator: "MenuFast",
-  publisher: "MenuFast",
+  authors: [{ name: "Torq Orbit", url: "https://torqorbit.in" }],
+  creator: "Torq Orbit",
+  publisher: "Torq Orbit",
   category: "technology",
   robots: {
     index: true,
@@ -65,20 +65,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://menufast.in",
-    siteName: "MenuFast",
-    title: "MenuFast — Zero-Commission Online Ordering for Food Businesses",
+    url: "https://torqorbit.in",
+    siteName: "Torq Orbit",
+    title: "Torq Orbit — Zero-Commission Online Ordering for Food Businesses",
     description:
       "Stop paying 20–30% to delivery apps. Build your own branded food store, receive orders on WhatsApp, and keep 100% of your profits.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MenuFast — Zero-Commission Online Ordering",
+    title: "Torq Orbit — Zero-Commission Online Ordering",
     description:
       "Stop paying 20–30% to delivery apps. Build your own branded food store in 2 minutes. Keep 100% of profits.",
   },
   alternates: {
-    canonical: "https://menufast.in",
+    canonical: "https://torqorbit.in",
   },
 };
 

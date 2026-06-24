@@ -51,7 +51,7 @@ export function getPostBySlug(slug: string): Post | null {
     title: data.title ?? slug,
     description: data.description ?? "",
     date: data.date ?? new Date().toISOString().slice(0, 10),
-    author: data.author ?? "MenuFast Team",
+    author: data.author ?? "Torq Orbit Team",
     category: data.category ?? "Guides",
     funnel: (data.funnel as Funnel) ?? "TOFU",
     keywords: Array.isArray(data.keywords) ? data.keywords : [],

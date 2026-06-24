@@ -18,17 +18,17 @@ import FooterCTA from "@/app/components/FooterCTA";
 import { FAQS, SITE } from "@/data/landing";
 
 export const metadata: Metadata = {
-  title: "MenuFast — Zero-Commission Online Store for Restaurants, Retail & Services",
+  title: "Torq Orbit — Zero-Commission Online Store for Restaurants, Retail & Services",
   description:
     "Launch your branded online store in 2 minutes. Zero commission, WhatsApp ordering, and your own customer data. For restaurants, retail shops, and home service providers across India.",
   alternates: {
-    canonical: "https://menufast.in",
+    canonical: "https://torqorbit.in",
   },
   openGraph: {
-    title: "MenuFast — Zero-Commission Online Store for Local Businesses",
+    title: "Torq Orbit — Zero-Commission Online Store for Local Businesses",
     description:
       "Stop paying 20–30% to marketplaces. Build your own branded store, take orders on WhatsApp, and keep 100% of your profits.",
-    url: "https://menufast.in",
+    url: "https://torqorbit.in",
   },
 };
 
@@ -72,7 +72,7 @@ const jsonLd = {
           price: "549",
           priceCurrency: "INR",
           description:
-            "Everything in Free, plus online payments, orders & sales dashboard, and WhatsApp status updates to customers. 45-day free trial.",
+            "Everything in Free, plus online payments, orders & sales dashboard, and WhatsApp status updates to customers. 28-day free trial.",
         },
         {
           "@type": "Offer",
@@ -80,7 +80,7 @@ const jsonLd = {
           price: "999",
           priceCurrency: "INR",
           description:
-            "Everything in Growth, plus full branding control, logo upload, custom domain, loyalty program and analytics. 45-day free trial.",
+            "Everything in Growth, plus full branding control, logo upload, custom domain, loyalty program and analytics. 28-day free trial.",
         },
       ],
     },
@@ -88,7 +88,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${SITE.url}/`,
       url: SITE.url,
-      name: "MenuFast — Zero-Commission Online Store for Restaurants, Retail & Services",
+      name: "Torq Orbit — Zero-Commission Online Store for Restaurants, Retail & Services",
       isPartOf: { "@id": `${SITE.url}/#organization` },
       about: { "@id": `${SITE.url}/#software` },
       breadcrumb: {
@@ -151,7 +151,7 @@ export default function HomePage() {
                 </h2>
                 <p className="mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-[#6b6b6b]">
                   Drag the sliders to match your business and see what you lose to commission every
-                  year — and what you&apos;d keep with MenuFast.
+                  year — and what you&apos;d keep with Torq Orbit.
                 </p>
               </div>
               <CommissionCalculator />

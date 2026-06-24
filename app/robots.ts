@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/dashboard", "/dashboard/"],
       },
     ],
-    sitemap: "https://menufast.in/sitemap.xml",
-    host: "https://menufast.in",
+    sitemap: "https://torqorbit.in/sitemap.xml",
+    host: "https://torqorbit.in",
   };
 }

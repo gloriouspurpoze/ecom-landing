@@ -66,21 +66,21 @@ export default function DashboardShowcase() {
           transition={{ duration: 0.6 }}
           className="rounded-2xl border border-[#262626] bg-[#141414] overflow-hidden shadow-2xl"
           role="img"
-          aria-label="Example MenuFast business dashboard showing orders, revenue, and menu management"
+          aria-label="Example Torq Orbit business dashboard showing orders, revenue, and menu management"
         >
           {/* Window chrome */}
           <div className="flex items-center gap-2 border-b border-[#262626] px-4 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" aria-hidden="true" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" aria-hidden="true" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" aria-hidden="true" />
-            <span className="ml-3 text-xs text-[#6b6b6b]">menufast.in/dashboard</span>
+            <span className="ml-3 text-xs text-[#6b6b6b]">torqorbit.in/dashboard</span>
           </div>
 
           <div className="p-4 sm:p-6 lg:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
               <div>
                 <p className="text-xs text-[#6b6b6b]">Good afternoon</p>
-                <p className="text-lg font-semibold text-white">Zainab&apos;s Bakes</p>
+                <p className="text-lg font-semibold text-white">Cakes and Bakes</p>
               </div>
               <div className="flex gap-2">
                 <span className="rounded-md bg-[#1d9e75]/20 px-3 py-1.5 text-xs font-medium text-[#1d9e75]">

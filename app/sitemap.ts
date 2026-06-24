@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import menuMockData from "@/data/menu-mock-data.json";
 import { getAllPosts } from "@/lib/blog";
 
-const BASE_URL = "https://menufast.in";
+const BASE_URL = "https://torqorbit.in";
 
 const LEGAL_PAGES = ["/privacy", "/terms", "/refund", "/contact"] as const;
 

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePlayground, BusinessType } from "@/app/context/PlaygroundContext";
 import { ArrowRight, Check, BadgePercent, Monitor, Smartphone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,10 +21,18 @@ export default function Hero() {
   const { businessType, setBusinessType } = usePlayground();
   const [viewport, setViewport] = useState<ViewportVariant>("mobile");
 
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const syncViewport = () => setViewport(mq.matches ? "desktop" : "mobile");
+    syncViewport();
+    mq.addEventListener("change", syncViewport);
+    return () => mq.removeEventListener("change", syncViewport);
+  }, []);
+
   return (
     <section
       aria-label="Hero"
-      className="relative overflow-hidden px-4 sm:px-6 pt-28 sm:pt-32 pb-16 sm:pb-20"
+      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 lg:pb-28"
     >
       {/* Modern mesh background */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
@@ -32,7 +40,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,10,10,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,10,10,0.025)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000,transparent)]" />
       </div>
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 lg:grid-cols-2 lg:grid-rows-[auto_auto] gap-10 lg:gap-12 items-center">
+      <div className="mx-auto grid max-w-6xl xl:max-w-7xl grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:grid-rows-[auto_auto] gap-10 lg:gap-14 xl:gap-16 items-center">
         {/* Intro copy — first on all breakpoints */}
         <div className="order-1 text-center lg:text-left">
           <motion.div
@@ -49,7 +57,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="font-display text-[2.6rem] leading-[1.08] sm:text-5xl md:text-[3.5rem] tracking-tight text-[#0a0a0a] mt-5 sm:mt-6"
+            className="font-display text-[2.6rem] leading-[1.08] sm:text-5xl md:text-[3.5rem] tracking-tight text-[#0a0a0a] mt-5 sm:mt-6 lg:mt-7"
           >
             Your store.
             <br />
@@ -62,7 +70,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="mx-auto lg:mx-0 max-w-xl text-base sm:text-lg leading-7 sm:leading-8 text-[#5a5a55] mt-5 sm:mt-6"
+            className="mx-auto lg:mx-0 max-w-xl lg:max-w-lg xl:max-w-xl text-base sm:text-lg  leading-7 sm:leading-8 lg:leading-9 text-[#5a5a55] mt-5 sm:mt-6 lg:mt-7"
           >
             Stop losing 20–30% to delivery apps and marketplaces. Launch a beautiful online
             store with WhatsApp ordering — for food, retail, or home services.
@@ -74,15 +82,15 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.94, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="order-2 relative flex justify-center lg:justify-end lg:col-start-2 lg:row-start-1 lg:row-span-2"
+          className="order-2 relative flex justify-center lg:justify-end lg:col-start-2 lg:row-start-1 lg:row-span-2 w-full min-w-0"
         >
           {/* Soft brand glow */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 m-auto h-[80%] w-[80%] rounded-full bg-[#1d9e75]/20 blur-[90px]"
+            className="absolute inset-0 -z-10 m-auto h-[85%] w-[90%] rounded-full bg-[#1d9e75]/20 blur-[100px]"
           />
 
-          <div className="relative flex flex-col items-center">
+          <div className="relative flex w-full max-w-[320px] sm:max-w-[360px] lg:max-w-none flex-col items-center lg:items-end">
             <FloatPhone>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -91,6 +99,7 @@ export default function Hero() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.25 }}
+                  className="w-full"
                 >
                   <MockupFrame variant={viewport} />
                 </motion.div>
@@ -138,7 +147,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className={`hidden sm:flex absolute items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5 ${
-                viewport === "desktop" ? "-left-4 top-6" : "-left-6 top-10"
+                viewport === "desktop" ? "lg:-left-8 lg:top-8 -left-4 top-6" : "-left-6 top-10"
               }`}
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e1f5ee] text-[#1d9e75]">
@@ -156,7 +165,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.6, delay: 0.78 }}
               className={`hidden sm:flex absolute items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-[#e5e5e0] shadow-lg px-3.5 py-2.5 ${
-                viewport === "desktop" ? "-right-4 bottom-24" : "-right-5 bottom-16"
+                viewport === "desktop" ? "lg:-right-8 lg:bottom-28 -right-4 bottom-24" : "-right-5 bottom-16"
               }`}
             >
               <span className="relative flex h-2.5 w-2.5">
@@ -224,14 +233,14 @@ export default function Hero() {
           >
             <a
               href="/signup"
-              className="group w-full sm:w-auto rounded-lg bg-[#0a0a0a] px-7 py-3.5 text-sm font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
+              className="group w-full sm:w-auto rounded-lg bg-[#0a0a0a] px-7 py-3.5 lg:px-8 lg:py-4 text-sm lg:text-base font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
             >
               Start free — it takes 2 minutes
               <ArrowRight size={15} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="/zainabs-bakes"
-              className="w-full sm:w-auto rounded-lg border border-[#e5e5e0] bg-white px-7 py-3.5 text-sm font-medium text-[#0a0a0a] text-center transition hover:border-[#bfbfb8]"
+              href="/cakes-and-bakes"
+              className="w-full sm:w-auto rounded-lg border border-[#e5e5e0] bg-white px-7 py-3.5 lg:px-8 lg:py-4 text-sm lg:text-base font-medium text-[#0a0a0a] text-center transition hover:border-[#bfbfb8]"
             >
               See a live store
             </a>
@@ -243,7 +252,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.42 }}
             className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs sm:text-sm text-[#5a5a55]"
           >
-            {["45-day free trial", "No credit card", "Cancel anytime"].map((t) => (
+            {["28-day free trial", "No credit card", "Cancel anytime"].map((t) => (
               <li key={t} className="flex items-center gap-1.5">
                 <Check size={14} aria-hidden="true" className="text-[#1d9e75]" />
                 {t}

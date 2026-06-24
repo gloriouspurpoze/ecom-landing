@@ -55,7 +55,7 @@ export default function Features() {
             transition={{ duration: 0.55 }}
           >
             <p className="mb-3 sm:mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[#757570]">
-              Why MenuFast
+              Why Torq Orbit
             </p>
             <h2
               id="features-heading"
@@ -87,13 +87,13 @@ export default function Features() {
             />
             <div className="relative">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-[#7fe6c1]">
-                The MenuFast difference
+                The Torq Orbit difference
               </span>
               <h3 className="font-display text-2xl sm:text-3xl mt-4 tracking-tight">
                 Zero commission. Always.
               </h3>
               <p className="mt-3 max-w-md text-sm sm:text-base text-[#b5b5ad] leading-relaxed">
-                Delivery apps take 20–30% of every order. With MenuFast, every rupee your
+                Delivery apps take 20–30% of every order. With Torq Orbit, every rupee your
                 customers pay goes straight to you.
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function Features() {
               <div>
                 <div className="font-display text-3xl sm:text-4xl text-[#1d9e75]">₹0</div>
                 <div className="mt-1 text-[11px] sm:text-xs text-[#9a9a92]">
-                  Commission on MenuFast
+                  Commission on Torq Orbit
                 </div>
               </div>
             </div>

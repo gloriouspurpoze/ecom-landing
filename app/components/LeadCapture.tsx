@@ -13,7 +13,7 @@ export default function LeadCapture() {
     e.preventDefault();
     if (!email.trim()) return;
     const text = encodeURIComponent(
-      `Hi MenuFast! I'd like to learn more about the platform.\n\nMy email: ${email.trim()}`
+      `Hi Torq Orbit! I'd like to learn more about the platform.\n\nMy email: ${email.trim()}`
     );
     window.open(`https://wa.me/${CONTACT.whatsapp}?text=${text}`, "_blank", "noopener,noreferrer");
     setSubmitted(true);
@@ -43,7 +43,7 @@ export default function LeadCapture() {
           </h2>
           <p className="mt-3 text-sm sm:text-base text-[#6b6b6b]">
             Drop your email and we&apos;ll open WhatsApp so you can ask anything — setup, pricing, or
-            whether MenuFast fits your business.
+            whether Torq Orbit fits your business.
           </p>
 
           {submitted ? (

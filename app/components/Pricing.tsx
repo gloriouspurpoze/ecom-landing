@@ -26,7 +26,7 @@ const plans = [
     name: "Growth",
     price: "₹549",
     period: "/month",
-    trialNote: "45-day free trial · No card to start",
+    trialNote: "28-day free trial · No card to start",
     description: "Accept payments and track sales from one dashboard.",
     badge: "Most Popular",
     features: [
@@ -44,7 +44,7 @@ const plans = [
     name: "Premium",
     price: "₹999",
     period: "/month",
-    trialNote: "45-day free trial · No card to start",
+    trialNote: "28-day free trial · No card to start",
     description: "Full branding and advanced tools for serious businesses.",
     features: [
       "Everything in Growth",
@@ -85,7 +85,7 @@ export default function Pricing() {
               Simple pricing. Start free.
             </h2>
             <p className="mt-2 sm:mt-3 text-sm sm:text-base text-[#6b6b6b]">
-              Free forever on the base plan. Paid plans include a 45-day trial — no credit card
+              Free forever on the base plan. Paid plans include a 28-day trial — no credit card
               required.
             </p>
           </motion.div>

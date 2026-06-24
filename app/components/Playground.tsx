@@ -140,7 +140,7 @@ export default function Playground() {
                 <span className="text-sm font-medium text-[#0a0a0a]">Ready to go live?</span>
               </div>
               <p className="text-xs text-[#6b6b6b] mb-3 sm:mb-4 leading-relaxed">
-                Try for Free for 45 days. No credit card required during trial.
+                Try for Free for 28 days. No credit card required during trial.
               </p>
               <Link
                 href={`/signup?plan=free&businessType=${businessType}`}

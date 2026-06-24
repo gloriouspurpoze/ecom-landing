@@ -12,11 +12,11 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      description="How we handle your personal information when you use MenuFast."
+      description="How we handle your personal information when you use Torq Orbit."
       updated="13 June 2026"
     >
       <p>
-        MenuFast (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) operates {SITE.url} and related
+        Torq Orbit (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) operates {SITE.url} and related
         services for Indian businesses. This policy explains what data we collect, why we collect it,
         and your rights under applicable Indian law including the Digital Personal Data Protection Act,
         2023.
@@ -44,7 +44,7 @@ export default function PrivacyPage() {
 
       <h2>How we use your information</h2>
       <ul>
-        <li>Provide, operate, and maintain the MenuFast platform.</li>
+        <li>Provide, operate, and maintain the Torq Orbit platform.</li>
         <li>Process orders, payments, and WhatsApp notifications on your behalf.</li>
         <li>Send service updates, security alerts, and support responses.</li>
         <li>Improve features, fix bugs, and prevent fraud or abuse.</li>

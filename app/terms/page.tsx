@@ -12,17 +12,17 @@ export default function TermsPage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      description="The rules for using MenuFast as a business owner or customer."
+      description="The rules for using Torq Orbit as a business owner or customer."
       updated="13 June 2026"
     >
       <p>
-        By accessing or using MenuFast at {SITE.url}, you agree to these Terms of Service. If you do
+        By accessing or using Torq Orbit at {SITE.url}, you agree to these Terms of Service. If you do
         not agree, please do not use the platform.
       </p>
 
       <h2>Service description</h2>
       <p>
-        MenuFast provides software for businesses to create digital storefronts, manage menus or
+        Torq Orbit provides software for businesses to create digital storefronts, manage menus or
         catalogues, receive orders (including via WhatsApp), and optionally accept online payments.
         We are a technology platform — we are not a restaurant, retailer, or delivery company.
       </p>
@@ -42,13 +42,13 @@ export default function TermsPage() {
       </ul>
 
       <h2>Acceptable use</h2>
-      <p>You may not use MenuFast to sell illegal goods, infringe intellectual property, send spam,
+      <p>You may not use Torq Orbit to sell illegal goods, infringe intellectual property, send spam,
         or attempt to compromise platform security. We may suspend accounts that violate these terms.</p>
 
       <h2>Payments &amp; fees</h2>
       <ul>
         <li>Subscription fees are billed monthly as shown on our pricing page.</li>
-        <li>MenuFast charges zero commission on orders.</li>
+        <li>Torq Orbit charges zero commission on orders.</li>
         <li>
           Online payments processed through our gateway incur a separate payment-gateway fee (currently
           2%) charged by the payment provider.
@@ -58,13 +58,13 @@ export default function TermsPage() {
 
       <h2>Intellectual property</h2>
       <p>
-        MenuFast owns the platform, software, and branding. You retain ownership of your business
+        Torq Orbit owns the platform, software, and branding. You retain ownership of your business
         content (menus, logos, images) and grant us a licence to display it as part of the service.
       </p>
 
       <h2>Limitation of liability</h2>
       <p>
-        MenuFast is provided &quot;as is&quot;. To the maximum extent permitted by law, we are not
+        Torq Orbit is provided &quot;as is&quot;. To the maximum extent permitted by law, we are not
         liable for indirect, incidental, or consequential damages, lost profits, or disputes between
         you and your customers. Our total liability is limited to fees paid by you in the preceding
         three months.

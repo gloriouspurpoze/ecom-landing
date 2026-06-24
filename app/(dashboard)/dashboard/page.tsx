@@ -17,7 +17,7 @@ export default function DashboardPage() {
     api.get("/api/tenants/business/").then((res) => setBusiness(res.data));
   }, []);
 
-  const menuUrl = business ? `https://menu.menufast.in/${business.slug}` : "";
+  const menuUrl = business ? `https://menu.torqorbit.in/${business.slug}` : "";
 
   return (
     <div>
@@ -41,7 +41,7 @@ export default function DashboardPage() {
               rel="noreferrer"
               className="text-sm font-medium text-blue-600 hover:underline break-all"
             >
-              menu.menufast.in/{business.slug}
+              menu.torqorbit.in/{business.slug}
             </a>
           ) : (
             <p className="text-slate-400">—</p>

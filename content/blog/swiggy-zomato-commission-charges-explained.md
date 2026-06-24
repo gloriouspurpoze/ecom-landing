@@ -2,7 +2,7 @@
 title: "Swiggy & Zomato Commission Charges in 2026: What Restaurants Actually Pay"
 description: "A clear breakdown of food delivery app commission charges in India in 2026, the hidden fees, and how restaurants can reduce their dependon on aggregators."
 date: "2026-06-08"
-author: "MenuFast Team"
+author: "Torq Orbit Team"
 category: "Industry"
 funnel: "MOFU"
 keywords:
@@ -47,7 +47,7 @@ Aggregators bring discovery — new customers who'd never find you otherwise. Th
 
 You don't have to delist from delivery apps. The smart play is to **shift repeat customers to a direct channel**:
 
-1. **Create your own ordering link** (e.g. via [MenuFast](/)) with WhatsApp ordering and zero commission.
+1. **Create your own ordering link** (e.g. via [Torq Orbit](/)) with WhatsApp ordering and zero commission.
 2. **Insert a flyer or QR code** in every delivery bag: "Order direct next time & save — scan here."
 3. **Offer a small direct-only perk** — free delivery, a freebie, or a loyalty stamp.
 4. **Keep aggregators for discovery**, your own store for loyalty.

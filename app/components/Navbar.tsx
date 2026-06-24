@@ -69,10 +69,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          aria-label="MenuFast home"
+          aria-label="Torq Orbit home"
           className="font-display text-xl tracking-tight text-[#0a0a0a] shrink-0"
         >
-          menu<span className="text-[#1d9e75]">fast</span>
+          Torq<span className="text-[#1d9e75]"> Orbit</span>
         </Link>
 
         {/* Desktop nav links */}

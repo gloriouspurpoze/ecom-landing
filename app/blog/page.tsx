@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Practical guides on WhatsApp ordering, reducing delivery-app commission, and growing your restaurant, home kitchen or local business in India.",
   alternates: { canonical: `${SITE.url}/blog` },
   openGraph: {
-    title: "MenuFast Blog — Guides for Indian Local Businesses",
+    title: "Torq Orbit Blog — Guides for Indian Local Businesses",
     description:
       "WhatsApp ordering, commission-free selling, and growth guides for Indian food and local businesses.",
     url: `${SITE.url}/blog`,
@@ -24,7 +24,7 @@ export default function BlogIndex() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "@id": `${SITE.url}/blog#blog`,
-    name: "MenuFast Blog",
+    name: "Torq Orbit Blog",
     url: `${SITE.url}/blog`,
     publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
     blogPost: posts.map((p) => ({
@@ -47,7 +47,7 @@ export default function BlogIndex() {
       <header className="border-b border-[#e5e5e0] bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 sm:px-6 py-5">
           <Link href="/" className="font-display text-xl tracking-tight text-[#0a0a0a]">
-            menu<span className="text-[#1d9e75]">fast</span>
+            Torq<span className="text-[#1d9e75]"> Orbit</span>
           </Link>
           <Link href="/" className="text-sm text-[#6b6b6b] hover:text-[#0a0a0a] transition-colors">
             ← Back to home

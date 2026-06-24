@@ -2,7 +2,7 @@
 title: "How to Take Orders on WhatsApp for Your Restaurant (2026 Guide)"
 description: "A step-by-step guide for Indian restaurants, cafes and home kitchens to take food orders on WhatsApp — without paying delivery-app commission."
 date: "2026-06-10"
-author: "MenuFast Team"
+author: "Torq Orbit Team"
 category: "Guides"
 funnel: "TOFU"
 keywords:
@@ -38,7 +38,7 @@ Instead of a static image, give customers a proper menu page they can browse, wi
 
 When a customer taps it, WhatsApp opens with a pre-written message like:
 
-> Hi! I'd like to order from Zainab's Bakes:
+> Hi! I'd like to order from Cakes and Bakes:
 > - 1× Tres Leches (1kg) — ₹850
 > - 2× Biscoff Cheesecake slice — ₹360
 > Total: ₹1,210
@@ -47,10 +47,10 @@ No back-and-forth. No missing details. You just confirm and prepare.
 
 ## How to set this up in under 2 minutes
 
-You don't need a website or a developer. With a tool like [MenuFast](/), you can:
+You don't need a website or a developer. With a tool like [Torq Orbit](/), you can:
 
 1. **Add your items** — name, photo, price, and availability.
-2. **Get your link** — like `menufast.in/yourkitchen`, plus a QR code.
+2. **Get your link** — like `torqorbit.in/yourkitchen`, plus a QR code.
 3. **Share it** — Instagram bio, WhatsApp status, or printed at your counter.
 4. **Receive orders** — structured messages land directly on your WhatsApp.
 

@@ -72,7 +72,7 @@ function SignupContent() {
         name: form.owner_name,
         email: form.email,
         phone: form.whatsapp_number,
-        service: "MenuFast — Digital Menu",
+        service: "Torq Orbit — Digital Menu",
         message: messageParts,
       });
       setSubmitted(true);

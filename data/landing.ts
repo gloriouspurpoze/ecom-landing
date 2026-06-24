@@ -6,13 +6,13 @@
  */
 
 export const SITE = {
-  name: "MenuFast",
-  url: "https://menufast.in",
+  name: "Torq Orbit",
+  url: "https://torqorbit.in",
   tagline: "Zero-commission online ordering for Indian local businesses",
 } as const;
 
 export const CONTACT = {
-  email: "hello@menufast.in",
+  email: "hello@torqorbit.in",
   whatsapp: "917977148243",
   whatsappDisplay: "+91 79771 48243",
   address: "Mumbai, Maharashtra, India",
@@ -38,7 +38,7 @@ export const STEPS: Step[] = [
     step: "02",
     title: "Share your link everywhere",
     description:
-      "Get a clean menu page at menufast.in/yourkitchen plus a QR code. Drop it in your Instagram bio, WhatsApp status, or print it for your counter.",
+      "Get a clean menu page at torqorbit.in/yourkitchen plus a QR code. Drop it in your Instagram bio, WhatsApp status, or print it for your counter.",
     tag: "Works on any phone",
   },
   {
@@ -68,11 +68,11 @@ export type UseCase = {
 /** Scenario stories — not fabricated individual reviews. Live demos link to real example menus. */
 export const USE_CASES: UseCase[] = [
   {
-    title: "Zainab's Bakes",
+    title: "Cakes and Bakes",
     vertical: "Home bakery · Mumbai",
     quote:
       "A clean menu page customers can browse and order from — instead of screenshot price lists in Instagram DMs.",
-    href: "/zainabs-bakes",
+    href: "/cakes-and-bakes",
     cta: "View live menu",
   },
   {
@@ -116,9 +116,9 @@ export type Faq = {
 
 export const FAQS: Faq[] = [
   {
-    question: "Does MenuFast charge any commission on orders?",
+    question: "Does Torq Orbit charge any commission on orders?",
     answer:
-      "No. MenuFast charges zero commission on every order — you keep 100% of what your customers pay. The only optional cost is a 2% payment-gateway fee, and that applies only if you use the built-in online payments on the Growth plan.",
+      "No. Torq Orbit charges zero commission on every order — you keep 100% of what your customers pay. The only optional cost is a 2% payment-gateway fee, and that applies only if you use the built-in online payments on the Growth plan.",
   },
   {
     question: "How long does it take to set up my food menu?",
@@ -128,7 +128,7 @@ export const FAQS: Faq[] = [
   {
     question: "Do I need a website or any technical skills?",
     answer:
-      "Not at all. If you can fill in a simple form, you can run a MenuFast store. Hosting, your menu link, and the QR code are all set up for you automatically.",
+      "Not at all. If you can fill in a simple form, you can run a Torq Orbit store. Hosting, your menu link, and the QR code are all set up for you automatically.",
   },
   {
     question: "How does WhatsApp ordering work?",
@@ -136,9 +136,9 @@ export const FAQS: Faq[] = [
       "Customers browse your menu, add items, and tap to order. A structured message with the items, quantities and notes is sent straight to your WhatsApp number, so you can confirm and prepare it right away.",
   },
   {
-    question: "What types of food businesses can use MenuFast?",
+    question: "What types of food businesses can use Torq Orbit?",
     answer:
-      "MenuFast is built for Indian restaurants, cafes, home kitchens, tiffin and dabba services, cloud kitchens, home bakers, and dessert and health-food brands of any size.",
+      "Torq Orbit is built for Indian restaurants, cafes, home kitchens, tiffin and dabba services, cloud kitchens, home bakers, and dessert and health-food brands of any size.",
   },
   {
     question: "Can I update my menu and prices every day?",
@@ -148,7 +148,7 @@ export const FAQS: Faq[] = [
   {
     question: "Is there really a free plan?",
     answer:
-      "Yes. The Free plan is free forever with unlimited menu items, WhatsApp order alerts, a QR code, and full menu management. Paid plans add online payments, dashboards and branding, and start with a 45-day free trial — no credit card required.",
+      "Yes. The Free plan is free forever with unlimited menu items, WhatsApp order alerts, a QR code, and full menu management. Paid plans add online payments, dashboards and branding, and start with a 28-day free trial — no credit card required.",
   },
   {
     question: "Can I accept online payments from customers?",

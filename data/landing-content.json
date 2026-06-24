@@ -18,8 +18,8 @@
     "titleBottom": "We simplify the rest.",
     "subtitle": "Stop losing 28% to Food Delivery apps. Get a beautiful digital menu, WhatsApp ordering, and your own customer list - all in one place.",
     "primaryCta": { "label": "See What your Menu could look like", "href": "/signup" },
-    "secondaryCta": { "label": "See a live example", "href": "/zainabs-bakes" },
-    "note": "45-day free trial - No credit card - Cancel anytime"
+    "secondaryCta": { "label": "See a live example", "href": "/cakes-and-bakes" },
+    "note": "28-day free trial - No credit card - Cancel anytime"
   },
   "socialProof": [
     "Home bakeries",
@@ -61,7 +61,7 @@
     },
     {
       "title": "Drop the link in your Instagram bio",
-      "description": "You get a clean menu page at menufast.in/yourkitchen. One link for browsing and ordering.",
+      "description": "You get a clean menu page at torqorbit.in/yourkitchen. One link for browsing and ordering.",
       "tag": "Works on any phone"
     },
     {
@@ -76,8 +76,8 @@
     }
   ],
   "liveDemo": {
-    "slug": "zainabs-bakes",
-    "businessName": "Zainab's Bakes",
+    "slug": "cakes-and-bakes",
+    "businessName": "Cakes and Bakes",
     "businessMeta": "Home bakery - Mumbai - Orders via WhatsApp",
     "category": "Cakes & Pastries",
     "items": [
@@ -96,7 +96,7 @@
       "WhatsApp ordering (zero commission)",
       "QR code for your menu",
       "Daily availability toggle",
-      "Your own menu link (menufast.in/you)",
+      "Your own menu link (torqorbit.in/you)",
       "2 menu templates to choose from",
       "Basic analytics (views, orders)"
     ],

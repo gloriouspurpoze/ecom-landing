@@ -54,7 +54,7 @@ export default function FooterCTA() {
             </Link>
           </div>
           <p className="mt-4 text-xs sm:text-sm text-[#757570]">
-            Free forever plan available · 45-day trial on paid plans · No credit card to start.
+            Free forever plan available · 28-day trial on paid plans · No credit card to start.
           </p>
         </motion.div>
       </section>
@@ -62,8 +62,8 @@ export default function FooterCTA() {
       <footer aria-label="Site footer" className="px-4 sm:px-6 py-8 sm:py-10">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-            <Link href="/" aria-label="MenuFast home" className="font-display text-lg text-[#0a0a0a]">
-              menu<span className="text-[#1d9e75]">fast</span>
+            <Link href="/" aria-label="Torq Orbit home" className="font-display text-lg text-[#0a0a0a]">
+              Torq<span className="text-[#1d9e75]"> Orbit</span>
             </Link>
 
             <nav aria-label="Footer navigation">
@@ -99,7 +99,7 @@ export default function FooterCTA() {
               Made for local businesses. Built in Mumbai.
             </p>
             <p className="text-xs text-[#757570]">
-              © {new Date().getFullYear()} MenuFast. All rights reserved.
+              © {new Date().getFullYear()} Torq Orbit. All rights reserved.
             </p>
           </div>
         </div>

@@ -9,7 +9,7 @@
       "city": "Mumbai",
       "instagramHandle": "priyas_tiffin",
       "whatsappNumber": "917977148243",
-      "menuUrl": "menufast.in/priyas-tiffin",
+      "menuUrl": "torqorbit.in/priyas-tiffin",
       "meta": [
         "Min order Rs.200",
         "12pm - 3pm",
@@ -101,15 +101,15 @@
       ]
     },
     {
-      "slug": "zainabs-bakes",
+      "slug": "cakes-and-bakes",
       "template": "cards",
-      "name": "Zainab's Bakes",
+      "name": "Cakes and Bakes",
       "logoEmoji": "🍰",
       "tagline": "Custom cakes & pastries - Bandra",
       "city": "Mumbai",
-      "instagramHandle": "zainabsbakes",
+      "instagramHandle": "cakesandbakes",
       "whatsappNumber": "917977148243",
-      "menuUrl": "menufast.in/zainabs-bakes",
+      "menuUrl": "torqorbit.in/cakes-and-bakes",
       "meta": [
         "Delivery in 45 mins",
         "Pre-order available",

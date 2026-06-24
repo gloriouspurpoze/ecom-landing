@@ -35,7 +35,7 @@ export default function LoginPage() {
     <main className="min-h-screen flex items-center justify-center bg-slate-50">
       <div className="bg-white rounded-2xl border border-slate-200 p-8 w-full max-w-md shadow-sm">
         <h1 className="text-2xl font-bold text-slate-900 mb-2">Welcome back</h1>
-        <p className="text-slate-500 mb-8 text-sm">Log in to your MenuFast account</p>
+        <p className="text-slate-500 mb-8 text-sm">Log in to your Torq Orbit account</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
