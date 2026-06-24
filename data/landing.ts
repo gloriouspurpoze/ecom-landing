@@ -123,7 +123,7 @@ export const FAQS: Faq[] = [
   {
     question: "How long does it take to set up my food menu?",
     answer:
-      "Your store can go live in under 2 minutes. Add your dishes, photos and prices, pick your brand name and colour, and you can start receiving orders on WhatsApp the same day. No website or developer needed.",
+      "Your store can go live in under 30 minutes. Add your dishes, photos and prices, pick your brand name and colour, and you can start receiving orders on WhatsApp the same day. No website or developer needed.",
   },
   {
     question: "Do I need a website or any technical skills?",

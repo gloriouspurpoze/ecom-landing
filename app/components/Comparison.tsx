@@ -50,15 +50,15 @@ export default function Comparison() {
           transition={{ duration: 0.55 }}
           className="overflow-hidden rounded-2xl border border-[#e5e5e0] bg-white"
         >
-          {/* Header row */}
-          <div className="grid grid-cols-[1.4fr_1fr_1fr] sm:grid-cols-3">
-            <div className="p-3 sm:p-5 text-[11px] sm:text-sm font-medium text-[#9a9a92]">
+          {/* Header row — narrow label col on mobile; Torq Orbit gets the width */}
+          <div className="grid grid-cols-[minmax(0,0.72fr)_1.38fr_1fr] sm:grid-cols-3">
+            <div className="min-w-0 p-2.5 sm:p-5 text-[10px] sm:text-sm font-medium leading-tight text-[#9a9a92]">
               What matters
             </div>
-            <div className="p-3 sm:p-5 text-center text-[11px] sm:text-sm font-semibold text-[#0a0a0a] bg-[#e1f5ee]">
+            <div className="min-w-0 p-2.5 sm:p-5 text-center text-[11px] sm:text-sm font-semibold text-[#0a0a0a] bg-[#e1f5ee]">
               Torq<span className="text-[#1d9e75]"> Orbit</span>
             </div>
-            <div className="p-3 sm:p-5 text-center text-[11px] sm:text-sm font-medium text-[#9a9a92]">
+            <div className="min-w-0 p-2.5 sm:p-5 text-center text-[10px] sm:text-sm font-medium leading-tight text-[#9a9a92]">
               Delivery apps
             </div>
           </div>
@@ -66,20 +66,20 @@ export default function Comparison() {
           {rows.map((row, i) => (
             <div
               key={row.label}
-              className={`grid grid-cols-[1.4fr_1fr_1fr] sm:grid-cols-3 border-t border-[#e5e5e0] ${
+              className={`grid grid-cols-[minmax(0,0.72fr)_1.38fr_1fr] sm:grid-cols-3 border-t border-[#e5e5e0] ${
                 i % 2 === 1 ? "bg-[#fafaf8]" : "bg-white"
               }`}
             >
-              <div className="p-3 sm:p-5 text-xs sm:text-sm text-[#0a0a0a] font-medium flex items-center">
+              <div className="min-w-0 p-2.5 sm:p-5 text-[10px] sm:text-sm leading-snug text-[#757570] font-medium flex items-center">
                 {row.label}
               </div>
-              <div className="p-3 sm:p-5 bg-[#e1f5ee]/40 flex items-start sm:items-center gap-1.5">
-                <Check size={14} aria-hidden="true" className="mt-0.5 sm:mt-0 text-[#1d9e75] shrink-0" />
-                <span className="text-xs sm:text-sm text-[#0a0a0a]">{row.torqOrbit}</span>
+              <div className="min-w-0 p-2.5 sm:p-5 bg-[#e1f5ee]/40 flex items-start sm:items-center gap-1">
+                <Check size={13} aria-hidden="true" className="mt-0.5 sm:mt-0 text-[#1d9e75] shrink-0" />
+                <span className="text-[11px] sm:text-sm leading-snug font-medium text-[#0a0a0a]">{row.torqOrbit}</span>
               </div>
-              <div className="p-3 sm:p-5 flex items-start sm:items-center gap-1.5">
-                <X size={14} aria-hidden="true" className="mt-0.5 sm:mt-0 text-red-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-[#9a9a92]">{row.apps}</span>
+              <div className="min-w-0 p-2.5 sm:p-5 flex items-start sm:items-center gap-1">
+                <X size={13} aria-hidden="true" className="mt-0.5 sm:mt-0 text-red-400 shrink-0" />
+                <span className="text-[11px] sm:text-sm leading-relaxed text-[#6b6b6b]">{row.apps}</span>
               </div>
             </div>
           ))}

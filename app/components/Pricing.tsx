@@ -16,7 +16,7 @@ const plans = [
       "Two free templates",
       "QR code for store link",
       "Full catalogue management",
-      "Login / OTP via phone number",
+      "Customer Login and Order History",
     ],
     cta: "Get Started Free",
     href: "/signup?plan=free",
