@@ -134,7 +134,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             Launch your commission-free store
           </h2>
           <p className="mt-2 text-sm text-[#b5b5ad]">
-            Build a branded store with WhatsApp ordering in under 2 minutes. Free to start.
+            Build a branded store with WhatsApp ordering in under 30 minutes. Free to start.
           </p>
           <Link
             href="/signup"

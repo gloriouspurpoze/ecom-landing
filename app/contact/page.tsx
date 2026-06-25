@@ -82,7 +82,7 @@ export default function ContactPage() {
         <div className="mt-10 rounded-xl border border-[#e5e5e0] bg-white p-6 sm:p-8 text-center">
           <h2 className="font-display text-xl text-[#0a0a0a]">Ready to launch your store?</h2>
           <p className="mt-2 text-sm text-[#6b6b6b]">
-            Start free in under 2 minutes — no credit card required.
+            Start free in under  minutes — no credit card required.
           </p>
           <Link
             href="/signup"

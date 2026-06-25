@@ -45,7 +45,7 @@ When a customer taps it, WhatsApp opens with a pre-written message like:
 
 No back-and-forth. No missing details. You just confirm and prepare.
 
-## How to set this up in under 2 minutes
+## How to set this up in under 30 minutes
 
 You don't need a website or a developer. With a tool like [Torq Orbit](/), you can:
 
