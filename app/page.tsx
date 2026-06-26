@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   description:
     "Launch your branded online store in 2 minutes. Zero commission, WhatsApp ordering, and your own customer data. For restaurants, retail shops, and home service providers across India.",
   alternates: {
-    canonical: "https://torqorbit.in",
+    canonical: SITE.url,
   },
   openGraph: {
     title: "Torq Orbit — Zero-Commission Online Store for Local Businesses",
     description:
       "Stop paying 20–30% to marketplaces. Build your own branded store, take orders on WhatsApp, and keep 100% of your profits.",
-    url: "https://torqorbit.in",
+    url: SITE.url,
   },
 };
 

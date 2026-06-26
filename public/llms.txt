@@ -4,7 +4,12 @@
 
 Torq Orbit helps business owners launch a branded online store in minutes, receive orders on WhatsApp, accept optional online payments, and keep 100% of order value with no delivery-app commission.
 
-Built in Mumbai, India. Site: https://torqorbit.in
+Built in Mumbai, India.
+
+## Domains
+
+- Marketing site: https://orbit.torqstudio.com
+- Customer store links: torqorbit.in/yourbusiness
 
 ## Product
 
@@ -30,25 +35,27 @@ Built in Mumbai, India. Site: https://torqorbit.in
 
 ## Key pages
 
-- Home: https://torqorbit.in/
-- Sign up: https://torqorbit.in/signup
-- Login: https://torqorbit.in/login
-- Blog (guides): https://torqorbit.in/blog
-- Commission calculator (free tool): https://torqorbit.in/commission-calculator
-- Live demo — Cakes and Bakes: https://torqorbit.in/cakes-and-bakes
-- Live demo — Priya's Tiffin: https://torqorbit.in/priyas-tiffin
-- Privacy policy: https://torqorbit.in/privacy
-- Terms of service: https://torqorbit.in/terms
-- Refund policy: https://torqorbit.in/refund
-- Contact: https://torqorbit.in/contact
-- Sitemap: https://torqorbit.in/sitemap.xml
-- Robots: https://torqorbit.in/robots.txt
+- Home: https://orbit.torqstudio.com/
+- Sign up: https://orbit.torqstudio.com/signup
+- Login: https://orbit.torqstudio.com/login
+- Blog (guides): https://orbit.torqstudio.com/blog
+- Commission calculator: https://orbit.torqstudio.com/commission-calculator
+- Live demo — Cakes and Bakes: https://orbit.torqstudio.com/cakes-and-bakes
+- Live demo — Priya's Tiffin: https://orbit.torqstudio.com/priyas-tiffin
+- Privacy: https://orbit.torqstudio.com/privacy
+- Terms: https://orbit.torqstudio.com/terms
+- Refund policy: https://orbit.torqstudio.com/refund
+- Contact: https://orbit.torqstudio.com/contact
+- Sitemap: https://orbit.torqstudio.com/sitemap.xml
+- Robots: https://orbit.torqstudio.com/robots.txt
+- LLMs: https://orbit.torqstudio.com/llms.txt
 
-## Contact & location
+## Contact
 
-- Founded in Mumbai, India
-- Serves businesses across India (IN)
+- Email: connect@torqstudio.com
+- WhatsApp: +91 79771 48243
+- Location: Mumbai, Maharashtra, India
 
-## Optional
+## Structured data
 
-Full structured data (Organization, SoftwareApplication, FAQPage, Reviews) is available in JSON-LD on the homepage.
+Homepage JSON-LD includes Organization, SoftwareApplication, WebPage, and FAQPage schemas. Blog posts include BlogPosting schema.

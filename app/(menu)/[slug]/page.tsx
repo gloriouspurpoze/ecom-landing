@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import menuMockData from "@/data/menu-mock-data.json";
+import { SITE } from "@/data/landing";
 
 type MenuCollection = typeof menuMockData;
 type MenuData = MenuCollection["menus"][number];
@@ -36,9 +37,18 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const data = getMenu(params.slug);
+  if (!data) {
+    return { title: "Menu Not Found" };
+  }
   return {
-    title: data ? `${data.name} - Menu` : "Menu Not Found",
-    description: data ? `Order from ${data.name} on WhatsApp` : "",
+    title: `${data.name} — Order on WhatsApp`,
+    description: `Browse ${data.name} menu and order on WhatsApp. ${data.tagline}. Powered by Torq Orbit.`,
+    alternates: { canonical: `${SITE.url}/${data.slug}` },
+    openGraph: {
+      title: `${data.name} — Torq Orbit Demo Store`,
+      description: data.tagline,
+      url: `${SITE.url}/${data.slug}`,
+    },
   };
 }
 

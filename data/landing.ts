@@ -7,7 +7,10 @@
 
 export const SITE = {
   name: "Torq Orbit",
-  url: "https://orbit.torqstudio.com/",
+  /** Marketing / landing site (subdomain) */
+  url: "https://orbit.torqstudio.com",
+  /** Customer storefront links use this domain */
+  storeDomain: "torqorbit.in",
   tagline: "Zero-commission online ordering for Indian local businesses",
 } as const;
 
