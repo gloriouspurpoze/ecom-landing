@@ -12,13 +12,18 @@ const types: { id: BusinessType; label: string; emoji: string }[] = [
   { id: "homeservice", label: "Home Services", emoji: "🏠" },
 ];
 
+const colorPresets = ["#1d9e75", "#FF5A1F", "#6366F1", "#F59E0B", "#EC4899", "#0EA5E9"];
+
+const steps = ["Build", "Share", "Get orders"];
+
 const viewportOptions: { id: ViewportVariant; label: string; icon: typeof Monitor }[] = [
   { id: "desktop", label: "Desktop", icon: Monitor },
   { id: "mobile", label: "Mobile", icon: Smartphone },
 ];
 
 export default function Hero() {
-  const { businessType, setBusinessType } = usePlayground();
+  const { businessType, setBusinessType, brandName, setBrandName, primaryColor, setPrimaryColor } =
+    usePlayground();
   const [viewport, setViewport] = useState<ViewportVariant>("mobile");
 
   useEffect(() => {
@@ -32,16 +37,15 @@ export default function Hero() {
   return (
     <section
       aria-label="Hero"
-      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 lg:pb-28"
+      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 lg:pb-20"
     >
-      {/* Modern mesh background */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_75%_-5%,rgba(29,158,117,0.12),transparent),radial-gradient(45%_40%_at_5%_20%,rgba(29,158,117,0.07),transparent)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,10,10,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,10,10,0.025)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000,transparent)]" />
       </div>
 
-      <div className="mx-auto grid max-w-6xl xl:max-w-7xl grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:grid-rows-[auto_auto] gap-10 lg:gap-14 xl:gap-16 items-center">
-        {/* Intro copy — first on all breakpoints */}
+      <div className="mx-auto grid max-w-6xl xl:max-w-7xl grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:grid-rows-[auto_auto] gap-8 lg:gap-12 xl:gap-14 items-center">
+        {/* Copy */}
         <div className="order-1 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: -12 }}
@@ -50,41 +54,53 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-white border border-[#e5e5e0] shadow-sm text-[#0f6e56] px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-medium"
           >
             <BadgePercent size={13} aria-hidden="true" className="text-[#1d9e75]" />
-            Zero commission · Keep 100% of every order
+            Zero commission · Keep 100%
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="font-display text-[2.6rem] leading-[1.08] sm:text-5xl md:text-[3.5rem] tracking-tight text-[#0a0a0a] mt-5 sm:mt-6 lg:mt-7"
+            className="font-display text-[2.4rem] leading-[1.08] sm:text-5xl md:text-[3.25rem] tracking-tight text-[#0a0a0a] mt-5 sm:mt-6"
           >
             Your store.
             <br />
-            <span className="text-[#1d9e75]">Your customers.</span>
-            <br />
-            We simplify the rest.
+            <span className="text-[#1d9e75]">Zero commission.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="mx-auto lg:mx-0 max-w-xl lg:max-w-lg xl:max-w-xl text-base sm:text-lg  leading-7 sm:leading-8 lg:leading-9 text-[#5a5a55] mt-5 sm:mt-6 lg:mt-7"
+            className="mx-auto lg:mx-0 max-w-md text-base sm:text-lg text-[#5a5a55] mt-4 sm:mt-5"
           >
-            Stop losing 20–30% to delivery apps and marketplaces. Launch a beautiful online
-            store with WhatsApp ordering — for food, retail, or home services.
+            Branded web store + WhatsApp orders. Live in 2 minutes.
           </motion.p>
+
+          {/* Inline steps */}
+          <motion.ol
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.22 }}
+            className="mt-5 flex items-center justify-center lg:justify-start gap-1 text-xs sm:text-sm text-[#6b6b6b]"
+            aria-label="How it works"
+          >
+            {steps.map((step, i) => (
+              <li key={step} className="flex items-center gap-1">
+                {i > 0 && <span aria-hidden="true" className="text-[#bfbfb8] mx-0.5">→</span>}
+                <span className="font-medium text-[#0a0a0a]">{step}</span>
+              </li>
+            ))}
+          </motion.ol>
         </div>
 
-        {/* Live product preview — before store toggles on mobile, right column on desktop */}
+        {/* Live preview */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="order-2 relative flex justify-center lg:justify-end lg:col-start-2 lg:row-start-1 lg:row-span-2 w-full min-w-0"
         >
-          {/* Soft brand glow */}
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 m-auto h-[85%] w-[90%] rounded-full bg-[#1d9e75]/20 blur-[100px]"
@@ -141,7 +157,6 @@ export default function Hero() {
               })}
             </div>
 
-            {/* Floating stat card — top left */}
             <motion.div
               initial={{ opacity: 0, x: -16, y: -8 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
@@ -159,7 +174,6 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Floating order notification — bottom right */}
             <motion.div
               initial={{ opacity: 0, x: 16, y: 8 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
@@ -180,16 +194,15 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Store selector, CTAs, trust — after preview on mobile */}
+        {/* Interactive controls + CTAs */}
         <div className="order-3 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.24 }}
+            className="space-y-4"
           >
-            <p className="text-[11px] font-medium text-[#757570] uppercase tracking-widest mb-3">
-              Preview your store →
-            </p>
+            {/* Business type */}
             <div
               role="group"
               aria-label="Business type selector"
@@ -223,26 +236,53 @@ export default function Hero() {
                 );
               })}
             </div>
+
+            {/* Brand name + color — inline customize */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-md mx-auto lg:mx-0">
+              <input
+                type="text"
+                maxLength={22}
+                value={brandName}
+                onChange={(e) => setBrandName(e.target.value)}
+                placeholder="Your brand name"
+                aria-label="Brand name"
+                className="flex-1 bg-white border border-[#e5e5e0] focus:border-[#1d9e75] rounded-xl px-4 py-2.5 text-sm text-[#0a0a0a] placeholder-[#9a9a92] outline-none transition-all focus:ring-2 focus:ring-[#1d9e75]/15"
+              />
+              <div role="group" aria-label="Brand color" className="flex items-center justify-center gap-2">
+                {colorPresets.map((hex) => (
+                  <button
+                    key={hex}
+                    onClick={() => setPrimaryColor(hex)}
+                    aria-label={`Color ${hex}`}
+                    aria-pressed={primaryColor === hex}
+                    className={`h-7 w-7 rounded-full transition-transform hover:scale-110 ${
+                      primaryColor === hex ? "ring-2 ring-offset-2 ring-[#0a0a0a]" : ""
+                    }`}
+                    style={{ backgroundColor: hex }}
+                  />
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3"
+            className="mt-6 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3"
           >
             <a
               href="/signup"
-              className="group w-full sm:w-auto rounded-lg bg-[#0a0a0a] px-7 py-3.5 lg:px-8 lg:py-4 text-sm lg:text-base font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
+              className="group w-full sm:w-auto rounded-lg bg-[#0a0a0a] px-7 py-3.5 text-sm font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
             >
-              Start free — it takes 2 minutes
+              Start free — 2 min setup
               <ArrowRight size={15} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="/cakes-and-bakes"
-              className="w-full sm:w-auto rounded-lg border border-[#e5e5e0] bg-white px-7 py-3.5 lg:px-8 lg:py-4 text-sm lg:text-base font-medium text-[#0a0a0a] text-center transition hover:border-[#bfbfb8]"
+              href="#proof"
+              className="w-full sm:w-auto rounded-lg border border-[#e5e5e0] bg-white px-7 py-3.5 text-sm font-medium text-[#0a0a0a] text-center transition hover:border-[#bfbfb8]"
             >
-              See a live store
+              See the math
             </a>
           </motion.div>
 
@@ -250,7 +290,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.42 }}
-            className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs sm:text-sm text-[#5a5a55]"
+            className="mt-5 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs sm:text-sm text-[#5a5a55]"
           >
             {["28-day free trial", "No credit card", "Cancel anytime"].map((t) => (
               <li key={t} className="flex items-center gap-1.5">

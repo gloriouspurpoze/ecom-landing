@@ -114,6 +114,30 @@ export type Faq = {
   answer: string;
 };
 
+/** Top 4 conversion FAQs shown on the homepage — must match visible FAQ section for JSON-LD. */
+export const HOMEPAGE_FAQS: Faq[] = [
+  {
+    question: "Does Torq Orbit charge any commission on orders?",
+    answer:
+      "No. Torq Orbit charges zero commission on every order — you keep 100% of what your customers pay. The only optional cost is a 2% payment-gateway fee, and that applies only if you use the built-in online payments on the Growth plan.",
+  },
+  {
+    question: "How long does it take to set up my store?",
+    answer:
+      "Your store can go live in under 30 minutes. Add your items, photos and prices, pick your brand name and colour, and start receiving orders on WhatsApp the same day.",
+  },
+  {
+    question: "Do I need a website or any technical skills?",
+    answer:
+      "Not at all. If you can fill in a simple form, you can run a Torq Orbit store. Hosting, your store link, and the QR code are all set up for you automatically.",
+  },
+  {
+    question: "Is there really a free plan?",
+    answer:
+      "Yes. The Free plan is free forever with unlimited items, WhatsApp order alerts, a QR code, and full catalogue management. Paid plans add online payments, dashboards and branding, with a 28-day free trial — no credit card required.",
+  },
+];
+
 export const FAQS: Faq[] = [
   {
     question: "Does Torq Orbit charge any commission on orders?",
