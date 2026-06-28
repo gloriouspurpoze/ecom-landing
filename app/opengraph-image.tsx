@@ -104,7 +104,7 @@ export default function OpengraphImage() {
             Restaurants · Cloud kitchens · Home bakers · Tiffin services
           </div>
           <div style={{ display: "flex", fontSize: 24, fontWeight: 600, color: "#0a0a0a" }}>
-            torqorbit.in
+            orbit.torqstudio.com
           </div>
         </div>
       </div>

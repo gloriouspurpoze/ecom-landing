@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import menuMockData from "@/data/menu-mock-data.json";
 import { getAllPosts } from "@/lib/blog";
+import { SITE } from "@/data/landing";
 
-const BASE_URL = "https://torqorbit.in";
+const BASE_URL = SITE.url;
 
 const LEGAL_PAGES = ["/privacy", "/terms", "/refund", "/contact"] as const;
 

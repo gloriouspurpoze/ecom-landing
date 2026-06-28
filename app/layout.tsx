@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { SITE } from "@/data/landing";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -24,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://torqorbit.in"),
+  metadataBase: new URL(SITE.url),
   title: {
     default:
       "Torq Orbit — Zero-Commission Online Store for Restaurants, Retail & Services",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     "tiffin service ordering app",
     "home bakery online store India",
   ],
-  authors: [{ name: "Torq Orbit", url: "https://torqorbit.in" }],
+  authors: [{ name: "Torq Orbit", url: SITE.url }],
   creator: "Torq Orbit",
   publisher: "Torq Orbit",
   category: "technology",
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://torqorbit.in",
+    url: SITE.url,
     siteName: "Torq Orbit",
     title: "Torq Orbit — Zero-Commission Online Ordering for Food Businesses",
     description:
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
       "Stop paying 20–30% to delivery apps. Build your own branded food store in 2 minutes. Keep 100% of profits.",
   },
   alternates: {
-    canonical: "https://torqorbit.in",
+    canonical: SITE.url,
   },
 };
 

@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { SITE } from "@/data/landing";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,10 +7,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/dashboard", "/dashboard/"],
+        disallow: ["/dashboard", "/dashboard/", "/api/"],
       },
     ],
-    sitemap: "https://torqorbit.in/sitemap.xml",
-    host: "https://torqorbit.in",
+    sitemap: `${SITE.url}/sitemap.xml`,
+    host: SITE.url,
   };
 }

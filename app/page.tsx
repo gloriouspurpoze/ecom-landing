@@ -2,33 +2,28 @@ import type { Metadata } from "next";
 import { PlaygroundProvider } from "@/app/context/PlaygroundContext";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
-import Features from "@/app/components/Features";
-import HowItWorks from "@/app/components/HowItWorks";
-import Playground from "@/app/components/Playground";
+import TrustStrip from "@/app/components/TrustStrip";
+import InteractiveProof from "@/app/components/InteractiveProof";
 import DashboardShowcase from "@/app/components/DashboardShowcase";
-import CommissionCalculator from "@/app/components/CommissionCalculator";
-import Comparison from "@/app/components/Comparison";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import Testimonials from "@/app/components/Testimonials";
 import Pricing from "@/app/components/Pricing";
-import LeadCapture from "@/app/components/LeadCapture";
+import Testimonials from "@/app/components/Testimonials";
 import FAQ from "@/app/components/FAQ";
 import FooterCTA from "@/app/components/FooterCTA";
-import { FAQS, SITE } from "@/data/landing";
+import StickyCTA from "@/app/components/StickyCTA";
+import { HOMEPAGE_FAQS, SITE } from "@/data/landing";
 
 export const metadata: Metadata = {
   title: "Torq Orbit — Zero-Commission Online Store for Restaurants, Retail & Services",
   description:
     "Launch your branded online store in 2 minutes. Zero commission, WhatsApp ordering, and your own customer data. For restaurants, retail shops, and home service providers across India.",
   alternates: {
-    canonical: "https://torqorbit.in",
+    canonical: SITE.url,
   },
   openGraph: {
     title: "Torq Orbit — Zero-Commission Online Store for Local Businesses",
     description:
       "Stop paying 20–30% to marketplaces. Build your own branded store, take orders on WhatsApp, and keep 100% of your profits.",
-    url: "https://torqorbit.in",
+    url: SITE.url,
   },
 };
 
@@ -106,7 +101,7 @@ const jsonLd = {
     {
       "@type": "FAQPage",
       "@id": `${SITE.url}/#faq`,
-      mainEntity: FAQS.map((faq) => ({
+      mainEntity: HOMEPAGE_FAQS.map((faq) => ({
         "@type": "Question",
         name: faq.question,
         acceptedAnswer: {
@@ -125,53 +120,18 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="min-h-screen bg-[#fafaf8] text-[#0a0a0a] selection:bg-[#1d9e75] selection:text-white overflow-x-hidden">
+      <main className="min-h-screen bg-[#fafaf8] text-[#0a0a0a] selection:bg-[#1d9e75] selection:text-white overflow-x-hidden pb-20 md:pb-0">
         <PlaygroundProvider>
           <Navbar />
           <Hero />
-          <Features />
-          <HowItWorks />
-          <Playground />
+          <TrustStrip />
+          <InteractiveProof />
           <DashboardShowcase />
-          <section
-            id="calculator"
-            aria-labelledby="calculator-heading"
-            className="border-t border-[#e5e5e0] py-16 sm:py-20 px-4 sm:px-6 scroll-mt-16"
-          >
-            <div className="mx-auto max-w-4xl">
-              <div className="mb-8 sm:mb-10">
-                <p className="mb-3 sm:mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[#757570]">
-                  Free tool
-                </p>
-                <h2
-                  id="calculator-heading"
-                  className="font-display text-3xl sm:text-4xl tracking-tight text-[#0a0a0a]"
-                >
-                  How much are delivery apps costing you?
-                </h2>
-                <p className="mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-[#6b6b6b]">
-                  Drag the sliders to match your business and see what you lose to commission every
-                  year — and what you&apos;d keep with Torq Orbit.
-                </p>
-              </div>
-              <CommissionCalculator />
-              <p className="mt-5 text-sm text-[#6b6b6b]">
-                <Link
-                  href="/commission-calculator"
-                  className="inline-flex items-center gap-1.5 font-medium text-[#0f6e56] hover:underline"
-                >
-                  Open the full calculator
-                  <ArrowRight size={14} aria-hidden="true" />
-                </Link>
-              </p>
-            </div>
-          </section>
-          <Comparison />
-          <Testimonials />
           <Pricing />
-          <LeadCapture />
+          <Testimonials />
           <FAQ />
           <FooterCTA />
+          <StickyCTA />
         </PlaygroundProvider>
       </main>
     </>
