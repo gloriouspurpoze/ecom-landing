@@ -131,7 +131,7 @@ export default function VerticalSelectModal() {
                           {vertical.label}
                         </span>
                         <span className="block text-xs text-[#6b6b6b] mt-0.5 line-clamp-2">
-                          {vertical.hero.painLine}
+                          {vertical.hero.targetAudience}
                         </span>
                       </span>
                       <span

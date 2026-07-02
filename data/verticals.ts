@@ -41,6 +41,7 @@ export interface VerticalConfig {
     orderNotification: { label: string; amount: string };
     secondaryCta: string;
     painLine: string;
+    targetAudience: string;
   };
   trustStrip: string[];
   proof: {
@@ -111,6 +112,7 @@ export const VERTICALS: Record<VerticalId, VerticalConfig> = {
       orderNotification: { label: "New order on WhatsApp", amount: "+ ₹420" },
       secondaryCta: "See the math",
       painLine: "Stop losing 20–30% to delivery apps.",
+      targetAudience: "Cloud kitchens, Cafes and restaurants",
     },
     trustStrip: [
       "₹0 commission",
@@ -194,6 +196,7 @@ export const VERTICALS: Record<VerticalId, VerticalConfig> = {
       orderNotification: { label: "New order on WhatsApp", amount: "+ ₹1,899" },
       secondaryCta: "Calculate marketplace fees",
       painLine: "Stop losing margin to marketplace commissions.",
+      targetAudience: "Crochet, Boutique, Handmade Gifts and Home Decor",
     },
     trustStrip: [
       "₹0 commission",
@@ -276,6 +279,7 @@ export const VERTICALS: Record<VerticalId, VerticalConfig> = {
       orderNotification: { label: "New booking on WhatsApp", amount: "AC service" },
       secondaryCta: "See platform fees",
       painLine: "Stop paying 15–30% to aggregator platforms.",
+      targetAudience: "Tutors, Plumbers, Electricians, Cleaners and more",
     },
     trustStrip: [
       "₹0 commission",
