@@ -4,12 +4,14 @@ import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import TrustStrip from "@/app/components/TrustStrip";
 import InteractiveProof from "@/app/components/InteractiveProof";
-import DashboardShowcase from "@/app/components/DashboardShowcase";
+import AdminShowcase from "@/app/components/AdminShowcase";
 import Pricing from "@/app/components/Pricing";
 import Testimonials from "@/app/components/Testimonials";
 import FAQ from "@/app/components/FAQ";
 import FooterCTA from "@/app/components/FooterCTA";
 import StickyCTA from "@/app/components/StickyCTA";
+import VerticalPersonalizationBar from "@/app/components/VerticalPersonalizationBar";
+import VerticalSelectModal from "@/app/components/VerticalSelectModal";
 import { HOMEPAGE_FAQS, SITE } from "@/data/landing";
 
 export const metadata: Metadata = {
@@ -122,11 +124,13 @@ export default function HomePage() {
       />
       <main className="min-h-screen bg-[#fafaf8] text-[#0a0a0a] selection:bg-[#1d9e75] selection:text-white overflow-x-hidden pb-20 md:pb-0">
         <PlaygroundProvider>
+          <VerticalSelectModal />
           <Navbar />
+          <VerticalPersonalizationBar />
           <Hero />
           <TrustStrip />
           <InteractiveProof />
-          <DashboardShowcase />
+          <AdminShowcase />
           <Pricing />
           <Testimonials />
           <FAQ />

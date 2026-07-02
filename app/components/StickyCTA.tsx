@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useVerticalContent } from "@/hooks/useVerticalContent";
 
 export default function StickyCTA() {
   const [visible, setVisible] = useState(false);
+  const { signupHref } = useVerticalContent();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 600);
@@ -24,7 +26,7 @@ export default function StickyCTA() {
           className="fixed bottom-0 inset-x-0 z-40 md:hidden border-t border-[#e5e5e0] bg-white/95 backdrop-blur-md px-4 py-3 safe-bottom"
         >
           <Link
-            href="/signup"
+            href={signupHref}
             className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] py-3.5 text-sm font-medium text-white"
           >
             Start free — 2 min setup

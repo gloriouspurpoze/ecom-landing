@@ -1,20 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePlayground, BusinessType } from "@/app/context/PlaygroundContext";
 import { ArrowRight, Check, BadgePercent, Monitor, Smartphone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MockupFrame, { type ViewportVariant } from "./MockupFrame";
 import FloatPhone from "./FloatPhone";
-
-const types: { id: BusinessType; label: string; emoji: string }[] = [
-  { id: "restaurant", label: "Restaurant", emoji: "🍽️" },
-  { id: "retail", label: "Retail", emoji: "🛍️" },
-  { id: "homeservice", label: "Home Services", emoji: "🏠" },
-];
+import { useVerticalContent } from "@/hooks/useVerticalContent";
+import { VERTICAL_LIST } from "@/data/verticals";
 
 const colorPresets = ["#1d9e75", "#FF5A1F", "#6366F1", "#F59E0B", "#EC4899", "#0EA5E9"];
-
-const steps = ["Build", "Share", "Get orders"];
 
 const viewportOptions: { id: ViewportVariant; label: string; icon: typeof Monitor }[] = [
   { id: "desktop", label: "Desktop", icon: Monitor },
@@ -22,8 +15,16 @@ const viewportOptions: { id: ViewportVariant; label: string; icon: typeof Monito
 ];
 
 export default function Hero() {
-  const { businessType, setBusinessType, brandName, setBrandName, primaryColor, setPrimaryColor } =
-    usePlayground();
+  const {
+    businessType,
+    setBusinessType,
+    brandName,
+    setBrandName,
+    primaryColor,
+    setPrimaryColor,
+    config,
+    signupHref,
+  } = useVerticalContent();
   const [viewport, setViewport] = useState<ViewportVariant>("mobile");
 
   useEffect(() => {
@@ -48,50 +49,47 @@ export default function Hero() {
         {/* Copy */}
         <div className="order-1 text-center lg:text-left">
           <motion.div
+            key={`badge-${businessType}`}
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="inline-flex items-center gap-2 bg-white border border-[#e5e5e0] shadow-sm text-[#0f6e56] px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-medium"
           >
             <BadgePercent size={13} aria-hidden="true" className="text-[#1d9e75]" />
-            Zero commission · Keep 100%
+            {config.hero.badge}
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-            className="font-display text-[2.4rem] leading-[1.08] sm:text-5xl md:text-[3.25rem] tracking-tight text-[#0a0a0a] mt-5 sm:mt-6"
-          >
-            Your store.
-            <br />
-            <span className="text-[#1d9e75]">Zero commission.</span>
-          </motion.h1>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={businessType}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35 }}
+            >
+              <h1 className="font-display text-[2.4rem] leading-[1.08] sm:text-5xl md:text-[3.25rem] tracking-tight text-[#0a0a0a] mt-5 sm:mt-6">
+                {config.hero.headline}
+                <br />
+                <span className="text-[#1d9e75]">{config.hero.headlineAccent}</span>
+              </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.16 }}
-            className="mx-auto lg:mx-0 max-w-md text-base sm:text-lg text-[#5a5a55] mt-4 sm:mt-5"
-          >
-            Branded web store + WhatsApp orders. Live in 2 minutes.
-          </motion.p>
+              <p className="mx-auto lg:mx-0 max-w-md text-base sm:text-lg text-[#5a5a55] mt-4 sm:mt-5">
+                {config.hero.subcopy}
+              </p>
 
-          {/* Inline steps */}
-          <motion.ol
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.22 }}
-            className="mt-5 flex items-center justify-center lg:justify-start gap-1 text-xs sm:text-sm text-[#6b6b6b]"
-            aria-label="How it works"
-          >
-            {steps.map((step, i) => (
-              <li key={step} className="flex items-center gap-1">
-                {i > 0 && <span aria-hidden="true" className="text-[#bfbfb8] mx-0.5">→</span>}
-                <span className="font-medium text-[#0a0a0a]">{step}</span>
-              </li>
-            ))}
-          </motion.ol>
+              <ol
+                className="mt-5 flex items-center justify-center lg:justify-start gap-1 text-xs sm:text-sm text-[#6b6b6b]"
+                aria-label="How it works"
+              >
+                {config.hero.steps.map((step, i) => (
+                  <li key={step} className="flex items-center gap-1">
+                    {i > 0 && <span aria-hidden="true" className="text-[#bfbfb8] mx-0.5">→</span>}
+                    <span className="font-medium text-[#0a0a0a]">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Live preview */}
@@ -187,8 +185,8 @@ export default function Hero() {
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#1d9e75]" />
               </span>
               <div className="text-left">
-                <p className="text-[11px] text-[#757570] leading-none">New order on WhatsApp</p>
-                <p className="text-sm font-bold text-[#0a0a0a] mt-1">+ ₹420</p>
+                <p className="text-[11px] text-[#757570] leading-none">{config.hero.orderNotification.label}</p>
+                <p className="text-sm font-bold text-[#0a0a0a] mt-1">{config.hero.orderNotification.amount}</p>
               </div>
             </motion.div>
           </div>
@@ -208,7 +206,7 @@ export default function Hero() {
               aria-label="Business type selector"
               className="inline-flex flex-wrap justify-center lg:justify-start gap-2 p-1.5 rounded-2xl bg-white border border-[#e5e5e0] shadow-sm"
             >
-              {types.map((type) => {
+              {VERTICAL_LIST.map((type) => {
                 const isSelected = businessType === type.id;
                 return (
                   <button
@@ -244,7 +242,7 @@ export default function Hero() {
                 maxLength={22}
                 value={brandName}
                 onChange={(e) => setBrandName(e.target.value)}
-                placeholder="Your brand name"
+                placeholder={config.hero.brandPlaceholder}
                 aria-label="Brand name"
                 className="flex-1 bg-white border border-[#e5e5e0] focus:border-[#1d9e75] rounded-xl px-4 py-2.5 text-sm text-[#0a0a0a] placeholder-[#9a9a92] outline-none transition-all focus:ring-2 focus:ring-[#1d9e75]/15"
               />
@@ -272,7 +270,7 @@ export default function Hero() {
             className="mt-6 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3"
           >
             <a
-              href="/signup"
+              href={signupHref}
               className="group w-full sm:w-auto rounded-lg bg-[#0a0a0a] px-7 py-3.5 text-sm font-medium text-white transition hover:opacity-90 flex items-center justify-center gap-2"
             >
               Start free — 2 min setup
@@ -282,7 +280,7 @@ export default function Hero() {
               href="#proof"
               className="w-full sm:w-auto rounded-lg border border-[#e5e5e0] bg-white px-7 py-3.5 text-sm font-medium text-[#0a0a0a] text-center transition hover:border-[#bfbfb8]"
             >
-              See the math
+              {config.hero.secondaryCta}
             </a>
           </motion.div>
 

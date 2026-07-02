@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { usePlayground, type BusinessType } from "@/app/context/PlaygroundContext";
+import { getVerticalConfig } from "@/data/verticals";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Star, Clock, Plus, Search, Lock } from "lucide-react";
 
@@ -194,8 +195,9 @@ function CartBar({
 export default function MockupFrame({ variant = "mobile" }: { variant?: ViewportVariant }) {
   const { businessType, brandName, primaryColor } = usePlayground();
   const content = verticalData[businessType];
-  const displayName = brandName.trim() || "Your Storefront";
-  const storeUrl = `${toSlug(brandName)}.torqorbit.in`;
+  const defaultBrand = getVerticalConfig(businessType).hero.defaultBrand;
+  const displayName = brandName.trim() || defaultBrand;
+  const storeUrl = `${toSlug(displayName)}.torqorbit.in`;
 
   const glowRadius = variant === "desktop" ? "rounded-2xl" : "rounded-[50px]";
 
