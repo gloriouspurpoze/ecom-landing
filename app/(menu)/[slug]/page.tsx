@@ -188,7 +188,7 @@ export default function MenuPage({
                 >
                   Order via WhatsApp
                 </a>
-                <p className="mt-2 text-center text-[10px] text-[#ddd]">Powered by menufast</p>
+                <p className="mt-2 text-center text-[10px] text-[#ddd]">Powered by Torq Orbit</p>
               </footer>
             </div>
           ) : (
@@ -284,7 +284,7 @@ export default function MenuPage({
                   </div>
                   <span className="text-sm font-medium text-white">Order via WhatsApp</span>
                 </a>
-                <p className="mt-2 text-center text-[10px] text-[#ccc]">Powered by menufast</p>
+                <p className="mt-2 text-center text-[10px] text-[#ccc]">Powered by Torq Orbit</p>
               </footer>
             </div>
           )}

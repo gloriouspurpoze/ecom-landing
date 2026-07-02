@@ -29,8 +29,8 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ display: "flex", fontSize: 40, fontWeight: 800, letterSpacing: -1 }}>
-            <span style={{ color: "#0a0a0a" }}>menu</span>
-            <span style={{ color: "#1d9e75" }}>fast</span>
+            <span style={{ color: "#0a0a0a" }}>Torq</span>
+            <span style={{ color: "#1d9e75" }}>Orbit</span>
           </div>
           <div
             style={{
@@ -75,7 +75,7 @@ export default function OpengraphImage() {
               marginTop: 4,
             }}
           >
-            food business.
+            business.
           </div>
           <div
             style={{
