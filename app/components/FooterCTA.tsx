@@ -1,10 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useVerticalContent } from "@/hooks/useVerticalContent";
 
 const footerLinks = [
   { label: "Why switch", href: "#proof", isAnchor: true },
+  { label: "Admin panel", href: "#dashboard", isAnchor: true },
   { label: "Pricing", href: "#pricing", isAnchor: true },
   { label: "Blog", href: "/blog", isAnchor: false },
   { label: "Commission calculator", href: "/commission-calculator", isAnchor: false },
@@ -17,37 +19,42 @@ const footerLinks = [
 ];
 
 export default function FooterCTA() {
+  const { businessType, config, signupHref } = useVerticalContent();
+
   return (
     <>
       <section
         aria-labelledby="cta-heading"
         className="border-y border-[#e5e5e0] bg-white px-4 sm:px-6 py-16 sm:py-20 text-center"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            id="cta-heading"
-            className="font-display text-3xl sm:text-4xl tracking-tight text-[#0a0a0a]"
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={businessType}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.35 }}
           >
-            Stop paying commission.
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-sm text-[#6b6b6b]">
-            2 minutes to set up. Free forever plan available.
-          </p>
-          <div className="mt-6">
-            <Link
-              href="/signup"
-              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-3.5 text-sm font-medium text-white transition hover:opacity-90"
+            <h2
+              id="cta-heading"
+              className="font-display text-3xl sm:text-4xl tracking-tight text-[#0a0a0a]"
             >
-              Start free now
-              <ArrowRight size={14} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </motion.div>
+              {config.footer.headline}
+            </h2>
+            <p className="mx-auto mt-3 max-w-md text-sm text-[#6b6b6b]">
+              {config.footer.subcopy}
+            </p>
+            <div className="mt-6">
+              <Link
+                href={signupHref}
+                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-3.5 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                Start free now
+                <ArrowRight size={14} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </section>
 
       <footer aria-label="Site footer" className="px-4 sm:px-6 py-8 sm:py-10">

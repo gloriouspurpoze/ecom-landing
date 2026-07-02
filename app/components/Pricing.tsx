@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, BadgePercent, Check, Sparkles, Zap } from "lucide-react";
+import { useVerticalContent } from "@/hooks/useVerticalContent";
 
 const plans = [
   {
@@ -70,7 +71,13 @@ type PlanId = (typeof plans)[number]["id"];
 
 export default function Pricing() {
   const [selected, setSelected] = useState<PlanId>("growth");
+  const { businessType, config } = useVerticalContent();
   const active = plans.find((p) => p.id === selected) ?? plans[1];
+
+  const planHref = (planId: string) =>
+    planId === "free"
+      ? `/signup?plan=free&businessType=${businessType}`
+      : `/signup?plan=${planId}&businessType=${businessType}`;
 
   return (
     <section
@@ -106,7 +113,18 @@ export default function Pricing() {
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-[#6b6b6b]">
             Free forever on the base plan — or try Growth / Premium free for 28 days.
-            <span className="hidden sm:inline"> Less than what delivery apps take on 3 orders.</span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={businessType}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="hidden sm:inline"
+              >
+                {" "}
+                {config.pricingHint}
+              </motion.span>
+            </AnimatePresence>
           </p>
         </motion.div>
 
@@ -292,7 +310,7 @@ export default function Pricing() {
               </div>
 
               <Link
-                href={active.href}
+                href={planHref(active.id)}
                 className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#0a0a0a] px-8 py-3.5 text-sm font-medium text-white transition hover:opacity-90 shrink-0"
               >
                 {active.cta}

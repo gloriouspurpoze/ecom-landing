@@ -8,10 +8,26 @@ function formatINR(n: number): string {
   return "₹" + Math.round(n).toLocaleString("en-IN");
 }
 
-export default function CommissionCalculator() {
-  const [monthlyOrders, setMonthlyOrders] = useState(400);
-  const [avgOrderValue, setAvgOrderValue] = useState(450);
-  const [commission, setCommission] = useState(25);
+type CommissionCalculatorProps = {
+  defaultMonthlyOrders?: number;
+  defaultAvgOrderValue?: number;
+  defaultCommission?: number;
+  commissionLabel?: string;
+  lossLabel?: string;
+  signupHref?: string;
+};
+
+export default function CommissionCalculator({
+  defaultMonthlyOrders = 400,
+  defaultAvgOrderValue = 450,
+  defaultCommission = 25,
+  commissionLabel = "Delivery-app commission",
+  lossLabel = "You hand over to delivery apps",
+  signupHref = "/signup",
+}: CommissionCalculatorProps) {
+  const [monthlyOrders, setMonthlyOrders] = useState(defaultMonthlyOrders);
+  const [avgOrderValue, setAvgOrderValue] = useState(defaultAvgOrderValue);
+  const [commission, setCommission] = useState(defaultCommission);
 
   const monthlyRevenue = monthlyOrders * avgOrderValue;
   const monthlyLoss = (monthlyRevenue * commission) / 100;
@@ -19,7 +35,6 @@ export default function CommissionCalculator() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-      {/* Inputs */}
       <div className="rounded-2xl border border-[#e5e5e0] bg-white p-6 sm:p-8 space-y-7">
         <Field
           label="Orders per month"
@@ -40,7 +55,7 @@ export default function CommissionCalculator() {
           onChange={setAvgOrderValue}
         />
         <Field
-          label="Delivery-app commission"
+          label={commissionLabel}
           value={commission}
           display={`${commission}%`}
           min={5}
@@ -55,7 +70,6 @@ export default function CommissionCalculator() {
         </div>
       </div>
 
-      {/* Result */}
       <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0a] p-6 sm:p-8 text-white flex flex-col justify-between">
         <div
           aria-hidden="true"
@@ -63,7 +77,7 @@ export default function CommissionCalculator() {
         />
         <div className="relative">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#9a9a92]">
-            You hand over to delivery apps
+            {lossLabel}
           </p>
           <motion.p
             key={yearlyLoss}
@@ -92,7 +106,7 @@ export default function CommissionCalculator() {
             <span className="font-bold text-white">{formatINR(yearlyLoss / 2)}</span>/year.
           </p>
           <Link
-            href="/signup"
+            href={signupHref}
             className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#1d9e75] px-5 py-3 text-sm font-medium text-white hover:opacity-90 transition"
           >
             Start free — keep 100%

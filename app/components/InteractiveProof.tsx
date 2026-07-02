@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Check, X, ExternalLink } from "lucide-react";
 import CommissionCalculator from "./CommissionCalculator";
+import { useVerticalContent } from "@/hooks/useVerticalContent";
 
 const tabs = [
   { id: "calculator", label: "Your loss", emoji: "💸" },
@@ -20,13 +21,10 @@ const compareRows = [
   { label: "WhatsApp", torq: "Built-in", apps: "No" },
 ];
 
-const liveStores = [
-  { name: "Cakes & Bakes", vertical: "Home bakery", href: "/cakes-and-bakes", emoji: "🎂" },
-  { name: "Priya's Tiffin", vertical: "Tiffin service", href: "/priyas-tiffin", emoji: "🥗" },
-];
-
 export default function InteractiveProof() {
   const [active, setActive] = useState<TabId>("calculator");
+  const { businessType, config, signupHref } = useVerticalContent();
+  const { proof } = config;
 
   return (
     <section
@@ -35,11 +33,23 @@ export default function InteractiveProof() {
       className="border-t border-[#e5e5e0] py-14 sm:py-18 px-4 sm:px-6 scroll-mt-16"
     >
       <div className="mx-auto max-w-4xl">
-        <h2 id="proof-heading" className="font-display text-2xl sm:text-3xl tracking-tight text-center">
-          See why businesses switch.
-        </h2>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={businessType}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h2 id="proof-heading" className="font-display text-2xl sm:text-3xl tracking-tight text-center">
+              {proof.heading}
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-[#6b6b6b] text-center max-w-xl mx-auto">
+              {proof.subheading}
+            </p>
+          </motion.div>
+        </AnimatePresence>
 
-        {/* Tab pills */}
         <div
           role="tablist"
           aria-label="Proof sections"
@@ -71,25 +81,32 @@ export default function InteractiveProof() {
           })}
         </div>
 
-        {/* Tab panels */}
         <div className="mt-8">
           <AnimatePresence mode="wait">
             {active === "calculator" && (
               <motion.div
-                key="calculator"
+                key={`calculator-${businessType}`}
                 role="tabpanel"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.25 }}
               >
-                <CommissionCalculator />
+                <CommissionCalculator
+                  key={businessType}
+                  defaultMonthlyOrders={proof.calculator.monthlyOrders}
+                  defaultAvgOrderValue={proof.calculator.avgOrderValue}
+                  defaultCommission={proof.calculator.commission}
+                  commissionLabel={proof.commissionLabel}
+                  lossLabel={proof.lossLabel}
+                  signupHref={signupHref}
+                />
               </motion.div>
             )}
 
             {active === "compare" && (
               <motion.div
-                key="compare"
+                key={`compare-${businessType}`}
                 role="tabpanel"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -97,7 +114,6 @@ export default function InteractiveProof() {
                 transition={{ duration: 0.25 }}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-4"
               >
-                {/* Torq Orbit card */}
                 <div className="rounded-2xl bg-[#0a0a0a] p-6 text-white">
                   <p className="text-xs font-medium text-[#7fe6c1] mb-4">Torq Orbit</p>
                   <ul className="space-y-4">
@@ -112,9 +128,8 @@ export default function InteractiveProof() {
                     ))}
                   </ul>
                 </div>
-                {/* Apps card */}
                 <div className="rounded-2xl border border-[#e5e5e0] bg-white p-6">
-                  <p className="text-xs font-medium text-[#9a9a92] mb-4">Delivery apps</p>
+                  <p className="text-xs font-medium text-[#9a9a92] mb-4">{proof.compareAppsName}</p>
                   <ul className="space-y-4">
                     {compareRows.map((row) => (
                       <li key={row.label} className="flex items-center justify-between gap-3">
@@ -132,7 +147,7 @@ export default function InteractiveProof() {
 
             {active === "live" && (
               <motion.div
-                key="live"
+                key={`live-${businessType}`}
                 role="tabpanel"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -140,29 +155,37 @@ export default function InteractiveProof() {
                 transition={{ duration: 0.25 }}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-4"
               >
-                {liveStores.map((store) => (
-                  <Link
-                    key={store.href}
-                    href={store.href}
-                    className="group flex items-center gap-4 rounded-2xl border border-[#e5e5e0] bg-white p-5 sm:p-6 hover:border-[#1d9e75] hover:shadow-sm transition-all"
-                  >
-                    <span className="text-3xl" aria-hidden="true">{store.emoji}</span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[11px] font-medium uppercase tracking-wider text-[#1d9e75]">
-                        {store.vertical}
-                      </p>
-                      <p className="font-semibold text-[#0a0a0a]">{store.name}</p>
-                    </div>
-                    <ExternalLink
-                      size={16}
-                      aria-hidden="true"
-                      className="text-[#9a9a92] group-hover:text-[#1d9e75] transition-colors shrink-0"
-                    />
-                  </Link>
-                ))}
+                {proof.liveStores.length > 0 ? (
+                  proof.liveStores.map((store) => (
+                    <Link
+                      key={store.href}
+                      href={store.href}
+                      className="group flex items-center gap-4 rounded-2xl border border-[#e5e5e0] bg-white p-5 sm:p-6 hover:border-[#1d9e75] hover:shadow-sm transition-all"
+                    >
+                      <span className="text-3xl" aria-hidden="true">{store.emoji}</span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[11px] font-medium uppercase tracking-wider text-[#1d9e75]">
+                          {store.vertical}
+                        </p>
+                        <p className="font-semibold text-[#0a0a0a]">{store.name}</p>
+                      </div>
+                      <ExternalLink
+                        size={16}
+                        aria-hidden="true"
+                        className="text-[#9a9a92] group-hover:text-[#1d9e75] transition-colors shrink-0"
+                      />
+                    </Link>
+                  ))
+                ) : (
+                  <div className="sm:col-span-2 rounded-2xl border border-dashed border-[#e5e5e0] bg-white p-8 text-center">
+                    <p className="text-sm text-[#6b6b6b]">
+                      Be the first {config.ownerLabel} on Torq Orbit — launch your service list in 2 minutes.
+                    </p>
+                  </div>
+                )}
                 <div className="sm:col-span-2 text-center pt-2">
                   <Link
-                    href="/signup"
+                    href={signupHref}
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0f6e56] hover:underline"
                   >
                     Build yours in 2 minutes
